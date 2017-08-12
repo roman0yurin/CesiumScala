@@ -3204,6 +3204,9 @@ package cesiumOptions {
     def terrainExaggeration(v: Double) = jsOpt("terrainExaggeration", v)
 
     def rotatable2D(v: Boolean) = jsOpt("rotatable2D", v)
+
+    /**Determines if shadows are cast by the sun.**/
+    def shadows(v: Boolean) = jsOpt("rotatable2D", v)
   }
 
    
