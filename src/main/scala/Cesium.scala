@@ -2916,7 +2916,7 @@ class HeadingPitchRoll protected() extends js.Object {
     def this(julianDayNumber: Double, secondsOfDay: Double, timeStandard: TimeStandard = ???) = this()
 
     var dayNumber: Int = js.native
-    var secondsOfDay: Int = js.native
+    var secondsOfDay: Double = js.native
 
     def clone(result: JulianDate = ???): JulianDate = js.native
 
