@@ -12,7 +12,7 @@ import scala.scalajs.js.Promise
 */
 @JSGlobal("Cesium.CesiumIon")
 @js.native
-object CesiumIon extends js.Object{
+object Ion extends js.Object{
 
 	/**
 	* The default Cesium ion access token to use.
@@ -78,27 +78,5 @@ object CesiumIon extends js.Object{
 		*   });
 		*/
 	def createImageryProvider(assetId:Int, options:js.UndefOr[js.Dynamic] = js.undefined):Promise[ImageryProvider] = js.native
-
-	/**
-		* Asynchronously creates a {@link Cesium3DTileset} representing a Cesium ion 3D Tiles asset and
-		* waits for it to become ready.
-		*
-		* @param  assetId The Cesium ion asset id.
-		* @returns {Promise<Cesium3DTileset>} A promise to the ready tileset representing the requested Cesium ion Asset.
-		*
-		* @example
-		* //Load a tileset with asset ID of 2347923
-		* Cesium.CesiumIon.create3DTileset(2347923)
-		*   .then(function (tileset) {
-		*     viewer.scene.primitives.add(tileset);
-		*   });
-		*
-		* //Load a tileset with asset ID of 2347923 for 3D Tile classification
-		* Cesium.CesiumIon.create3DTileset(2347923, { tilesetOptions: { classificationType: Cesium.ClassificationType.CESIUM_3D_TILE } })
-		*   .then(function (tileset) {
-		*     viewer.scene.primitives.add(tileset);
-		*   });
-		*/
-	def create3DTileset(assetId:Int, options:js.UndefOr[js.Dynamic] = js.undefined):Promise[Cesium3DTileset] = js.native
 }
 

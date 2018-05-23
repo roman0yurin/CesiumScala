@@ -8,6 +8,80 @@ import scala.scalajs.js
 import scala.scalajs.js.annotation.JSGlobal
 import scala.scalajs.js.|
 
+
+
+/**
+	* A {@link https://github.com/AnalyticalGraphicsInc/3d-tiles/blob/master/README.md|3D Tiles tileset},
+	* used for streaming massive heterogeneous 3D geospatial datasets.
+	*
+	* @alias Cesium3DTileset
+	* @constructor
+	*
+	* @param {Object} options Object with the following properties:
+	* @param {Resource|String|Promise<Resource>|Promise<String>} options.url The url to a tileset.json file or to a directory containing a tileset.json file.
+	* @param {Boolean} [options.show=true] Determines if the tileset will be shown.
+	* @param {Matrix4} [options.modelMatrix=Matrix4.IDENTITY] A 4x4 transformation matrix that transforms the tileset's root tile.
+	* @param {ShadowMode} [options.shadows=ShadowMode.ENABLED] Determines whether the tileset casts or receives shadows from each light source.
+	* @param {Number} [options.maximumScreenSpaceError=16] The maximum screen space error used to drive level of detail refinement.
+	* @param {Number} [options.maximumMemoryUsage=512] The maximum amount of memory in MB that can be used by the tileset.
+	* @param {Boolean} [options.cullWithChildrenBounds=true] Optimization option. Whether to cull tiles using the union of their children bounding volumes.
+	* @param {Boolean} [options.dynamicScreenSpaceError=false] Optimization option. Reduce the screen space error for tiles that are further away from the camera.
+	* @param {Number} [options.dynamicScreenSpaceErrorDensity=0.00278] Density used to adjust the dynamic screen space error, similar to fog density.
+	* @param {Number} [options.dynamicScreenSpaceErrorFactor=4.0] A factor used to increase the computed dynamic screen space error.
+	* @param {Number} [options.dynamicScreenSpaceErrorHeightFalloff=0.25] A ratio of the tileset's height at which the density starts to falloff.
+	* @param {Boolean} [options.skipLevelOfDetail=true] Optimization option. Determines if level of detail skipping should be applied during the traversal.
+	* @param {Number} [options.baseScreenSpaceError=1024] When <code>skipLevelOfDetail</code> is <code>true</code>, the screen space error that must be reached before skipping levels of detail.
+	* @param {Number} [options.skipScreenSpaceErrorFactor=16] When <code>skipLevelOfDetail</code> is <code>true</code>, a multiplier defining the minimum screen space error to skip. Used in conjunction with <code>skipLevels</code> to determine which tiles to load.
+	* @param {Number} [options.skipLevels=1] When <code>skipLevelOfDetail</code> is <code>true</code>, a constant defining the minimum number of levels to skip when loading tiles. When it is 0, no levels are skipped. Used in conjunction with <code>skipScreenSpaceErrorFactor</code> to determine which tiles to load.
+	* @param {Boolean} [options.immediatelyLoadDesiredLevelOfDetail=false] When <code>skipLevelOfDetail</code> is <code>true</code>, only tiles that meet the maximum screen space error will ever be downloaded. Skipping factors are ignored and just the desired tiles are loaded.
+	* @param {Boolean} [options.loadSiblings=false] When <code>skipLevelOfDetail</code> is <code>true</code>, determines whether siblings of visible tiles are always downloaded during traversal.
+	* @param {ClippingPlaneCollection} [options.clippingPlanes] The {@link ClippingPlaneCollection} used to selectively disable rendering the tileset.
+	* @param {ClassificationType} [options.classificationType] Determines whether terrain, 3D Tiles or both will be classified by this tileset. See {@link Cesium3DTileset#classificationType} for details about restrictions and limitations.
+	* @param {Ellipsoid} [options.ellipsoid=Ellipsoid.WGS84] The ellipsoid determining the size and shape of the globe.
+	* @param {Boolean} [options.debugFreezeFrame=false] For debugging only. Determines if only the tiles from last frame should be used for rendering.
+	* @param {Boolean} [options.debugColorizeTiles=false] For debugging only. When true, assigns a random color to each tile.
+	* @param {Boolean} [options.debugWireframe=false] For debugging only. When true, render's each tile's content as a wireframe.
+	* @param {Boolean} [options.debugShowBoundingVolume=false] For debugging only. When true, renders the bounding volume for each tile.
+	* @param {Boolean} [options.debugShowContentBoundingVolume=false] For debugging only. When true, renders the bounding volume for each tile's content.
+	* @param {Boolean} [options.debugShowViewerRequestVolume=false] For debugging only. When true, renders the viewer request volume for each tile.
+	* @param {Boolean} [options.debugShowGeometricError=false] For debugging only. When true, draws labels to indicate the geometric error of each tile.
+	* @param {Boolean} [options.debugShowRenderingStatistics=false] For debugging only. When true, draws labels to indicate the number of commands, points, triangles and features for each tile.
+	* @param {Boolean} [options.debugShowMemoryUsage=false] For debugging only. When true, draws labels to indicate the texture and geometry memory in megabytes used by each tile.
+	* @param {Boolean} [options.debugShowUrl=false] For debugging only. When true, draws labels to indicate the url of each tile.
+	* @param {Object} [options.pointCloudShading] Options for constructing a {@link PointCloudShading} object to control point attenuation based on geometric error and lighting.
+	*
+	* @exception {DeveloperError} The tileset must be 3D Tiles version 0.0 or 1.0.  See {@link https://github.com/AnalyticalGraphicsInc/3d-tiles#spec-status}
+	*
+	* @example
+	* var tileset = scene.primitives.add(new Cesium.Cesium3DTileset({
+	*      url : 'http://localhost:8002/tilesets/Seattle'
+	* }));
+	*
+	* @example
+	* // Common setting for the skipLevelOfDetail optimization
+	* var tileset = scene.primitives.add(new Cesium.Cesium3DTileset({
+	*      url : 'http://localhost:8002/tilesets/Seattle',
+	*      skipLevelOfDetail : true,
+	*      baseScreenSpaceError : 1024,
+	*      skipScreenSpaceErrorFactor : 16,
+	*      skipLevels : 1,
+	*      immediatelyLoadDesiredLevelOfDetail : false,
+	*      loadSiblings : false,
+	*      cullWithChildrenBounds : true
+	* }));
+	*
+	* @example
+	* // Common settings for the dynamicScreenSpaceError optimization
+	* var tileset = scene.primitives.add(new Cesium.Cesium3DTileset({
+	*      url : 'http://localhost:8002/tilesets/Seattle',
+	*      dynamicScreenSpaceError : true,
+	*      dynamicScreenSpaceErrorDensity : 0.00278,
+	*      dynamicScreenSpaceErrorFactor : 4.0,
+	*      dynamicScreenSpaceErrorHeightFalloff : 0.25
+	* }));
+	*
+	* @see {@link https://github.com/AnalyticalGraphicsInc/3d-tiles/blob/master/README.md|3D Tiles specification}
+	*/
 @js.native
 @JSGlobal("Cesium.Cesium3DTileset")
 class Cesium3DTileset(options: js.Object) extends js.Object{ //TODO расписать опции
