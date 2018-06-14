@@ -411,4 +411,13 @@ class Cesium3DTileset(options: js.Object) extends js.Object{ //TODO распис
 		*/
 	def makeStyleDirty():Unit = js.native
 
+	/**
+		* Destroys the WebGL resources held by this object. Destroying an object allows for deterministic release of WebGL resources, instead of relying on the garbage collector to destroy this object.
+		*
+		*	Once an object is destroyed, it should not be used; calling any function other than isDestroyed will result in a DeveloperError exception. Therefore, assign the return value (undefined) to the object as done in the example.
+		* Throws:
+		*  DeveloperError : This object was destroyed, i.e., destroy() was called.
+		*/
+	def destroy():Unit = js.native
+
 }
