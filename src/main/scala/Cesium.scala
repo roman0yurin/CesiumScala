@@ -10835,6 +10835,22 @@ class HeadingPitchRoll protected() extends js.Object {
     def isDestroyed(): Boolean = js.native
 
     def destroy(): Unit = js.native
+
+    /**
+      * If {@link Scene#requestRenderMode} is <code>true</code>, this value defines the maximum change in
+      * simulation time allowed before a render is requested. Lower values increase the number of frames rendered
+      * and higher values decrease the number of frames rendered. If <code>undefined</code>, changes to
+      * the simulation time will never request a render.
+      * This value impacts the rate of rendering for changes in the scene like lighting, entity property updates,
+      * and animations.
+      *
+      * @see {@link https://cesium.com/blog/2018/01/24/cesium-scene-rendering-performance/|Improving Performance with Explicit Rendering}
+      * @see Scene#requestRenderMode
+      *
+      * @type {Number}
+      * @default 0.5
+      */
+    var requestRenderMode: Boolean = js.native
   }
 
   /**
