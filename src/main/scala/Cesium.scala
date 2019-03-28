@@ -10,19 +10,20 @@
   */
 package cesium {
 
+  import c60.sjs.cesium.scene.Cesium3DTileFeature
+  import c60.sjs.cesium.style.{PostProcessStageCollection, PostProcessStageLibrary}
   import cesiumOptions._
   import org.scalajs.dom.html.Canvas
 
   import scala.concurrent._
   import scala.scalajs.js
   import scala.scalajs.js.annotation._
-  import scala.scalajs.js.{Promise => _, _}
+  import scala.scalajs.js.{Promise ⇒ _, _}
   import org.scalajs.dom.{Blob, Document, Element}
   import org.scalajs.dom.raw.{HTMLCanvasElement, HTMLImageElement, HTMLVideoElement}
   import org.w3c.dom.html.{HTMLElement, HTMLIFrameElement}
 
   import scala.scalajs.js.typedarray.{ArrayBuffer, Float32Array, Float64Array, Int16Array, Int8Array, TypedArray, Uint16Array, Uint32Array, Uint8Array}
-
   import scala.language.implicitConversions
 
   // -------------------------------------------------------------------------------------
@@ -10816,9 +10817,38 @@ class HeadingPitchRoll protected() extends js.Object {
 
     var rotatable2D: Boolean = js.native
 
+
+    /**
+      * Post processing effects applied to the final render.
+      * @type {PostProcessStageCollection}
+      */
+    val postProcessStages:PostProcessStageCollection = js.native
+
     var imagerySplitPosition: ImagerySplitDirection = js.native
 
-    def pick(windowPosition: Cartesian2): js.Dynamic = js.native
+    /**
+      * Returns an object with a `primitive` property that contains the first (top) primitive in the scene
+      * at a particular window coordinate or undefined if nothing is at the location. Other properties may
+      * potentially be set depending on the type of primitive and may be used to further identify the picked object.
+      * <p>
+      * When a feature of a 3D Tiles tileset is picked, <code>pick</code> returns a {@link Cesium3DTileFeature} object.
+      * </p>
+      *
+      * @example
+      * // On mouse over, color the feature yellow.
+      * handler.setInputAction(function(movement) {
+      *     var feature = scene.pick(movement.endPosition);
+      *     if (feature instanceof Cesium.Cesium3DTileFeature) {
+      *         feature.color = Cesium.Color.YELLOW;
+      *     }
+      * }, Cesium.ScreenSpaceEventType.MOUSE_MOVE);
+      *
+      * @param {Cartesian2} windowPosition Window coordinates to perform picking on.
+      * @param {Number} [width=3] Width of the pick rectangle.
+      * @param {Number} [height=3] Height of the pick rectangle.
+      * @returns {Object} Object containing the picked primitive.
+      */
+    def pick(windowPosition: Cartesian2, pickWidh:Int = 3, pickHeight:Int = 3): Cesium3DTileFeature = js.native
 
     def pickPosition(windowPosition: Cartesian2, result: Cartesian3 = ???): Cartesian3 = js.native
 
@@ -10835,6 +10865,14 @@ class HeadingPitchRoll protected() extends js.Object {
     def isDestroyed(): Boolean = js.native
 
     def destroy(): Unit = js.native
+
+    /**
+      * Requests a new rendered frame when {@link Scene#requestRenderMode} is set to <code>true</code>.
+      * The render rate will not exceed the {@link CesiumWidget#targetFrameRate}.
+      *
+      * @see Scene#requestRenderMode
+      */
+    def requestRender(): Unit = js.native
 
     /**
       * If {@link Scene#requestRenderMode} is <code>true</code>, this value defines the maximum change in
@@ -12754,6 +12792,8 @@ class HeadingPitchRoll protected() extends js.Object {
 
     def sampleTerrainMostDetailed(terrainProvider: TerrainProvider, positions: Array[Cartographic] = ???): Promise[Array[Cartographic]]  = js.native
 
+    /**Набор функций создающих дополнительные визуальные эффекты на 3д сцене**/
+    val PostProcessStageLibrary:PostProcessStageLibrary = js.native
   }
 
   /**
