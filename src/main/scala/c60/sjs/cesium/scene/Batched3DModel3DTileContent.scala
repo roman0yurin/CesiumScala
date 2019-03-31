@@ -34,7 +34,7 @@ trait Batched3DModel3DTileContent extends js.Object{
 
 	def tileset:Cesium3DTileset = js.native
 
-	def tile:js.Dynamic = js.native
+	def tile:Cesium3dTile = js.native
 
 	def url:String = js.native
 

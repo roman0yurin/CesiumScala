@@ -20,7 +20,7 @@ package cesium {
   import scala.scalajs.js.annotation._
   import scala.scalajs.js.{Promise ⇒ _, _}
   import org.scalajs.dom.{Blob, Document, Element}
-  import org.scalajs.dom.raw.{HTMLCanvasElement, HTMLImageElement, HTMLVideoElement}
+  import org.scalajs.dom.raw.{HTMLCanvasElement, HTMLDivElement, HTMLImageElement, HTMLVideoElement}
   import org.w3c.dom.html.{HTMLElement, HTMLIFrameElement}
 
   import scala.scalajs.js.typedarray.{ArrayBuffer, Float32Array, Float64Array, Int16Array, Int8Array, TypedArray, Uint16Array, Uint32Array, Uint8Array}
@@ -11720,6 +11720,11 @@ class HeadingPitchRoll protected() extends js.Object {
     def isDestroyed(): Boolean = js.native
 
     def destroy(): js.Dynamic = js.native
+
+
+    /**Элемент управления отладчиком**/
+    @JSName("_element")
+    def control:HTMLDivElement = js.native
   }
 
   /**
