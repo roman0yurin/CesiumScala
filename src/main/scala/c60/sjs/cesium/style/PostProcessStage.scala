@@ -4,6 +4,7 @@ import c60.sjs.cesium.scene.Cesium3DTileFeature
 import cesium.{BoundingRectangle, Color}
 
 import scala.scalajs.js
+import scala.scalajs.js.annotation.JSGlobal
 
 /**
 	* Runs a post-process stage on either the texture rendered by the scene or the output of a previous post-process stage.
@@ -79,6 +80,7 @@ import scala.scalajs.js
 	* @author Юрин Роман @date 26.03.19
 	**/
 @js.native
+@JSGlobal("PostProcessStage")
 class PostProcessStage(options: js.Dynamic) extends IPostProcessStage {
 
 	/**

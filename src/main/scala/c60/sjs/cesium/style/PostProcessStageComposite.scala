@@ -120,6 +120,7 @@ class PostProcessStageComposite(options: PostProcessCompositeStageOptions) exten
 
 /**Опции для создания пост-обработки**/
 @js.native
+@JSGlobal("PostProcessCompositeStageOptions")
 class PostProcessCompositeStageOptions(
 		 val name:String = js.native,
 		 val stages:js.Array[PostProcessStage] = js.native,

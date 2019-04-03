@@ -30,5 +30,5 @@ class TileOrientedBoundingBox(center:Cartesian3, halfAxes:Matrix3) extends TileB
 		*                           Equivalently, the transformation matrix, to rotate and scale a 2x2x2
 		*                           cube centered at the origin.
 		*/
-	def update(center:Cartesian3, halfAxes:Matrix3) = js.native
+	def update(center:Cartesian3, halfAxes:Matrix3):Unit = js.native
 }

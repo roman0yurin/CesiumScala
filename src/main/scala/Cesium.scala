@@ -10765,6 +10765,9 @@ class HeadingPitchRoll protected() extends js.Object {
   class Scene protected() extends js.Object {
     def this(options: SceneOptions) = this()
 
+    /**Нужно ли рендерить следующий кард в данный, или сейчас период простоя по рендерингу**/
+    def shouldRenderFrame():Boolean = js.native
+
     var rethrowRenderErrors: Boolean = js.native
     var completeMorphOnUserInput: Boolean = js.native
     var morphStart: Event = js.native

@@ -160,7 +160,7 @@ class Cesium3DTileFeature(val content:Batched3DModel3DTileContent, batchId:Int) 
 		*     console.log('first click');
 		* }
 		*/
-	def setProperty(name:String, value:js.Any) = js.native
+	def setProperty(name:String, value:js.Any):Unit = js.native
 
 	/**
 		* Returns whether the feature's class name equals <code>className</code>. Unlike {@link Cesium3DTileFeature#isClass}
