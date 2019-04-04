@@ -10851,7 +10851,7 @@ class HeadingPitchRoll protected() extends js.Object {
       * @param {Number} [height=3] Height of the pick rectangle.
       * @returns {Object} Object containing the picked primitive.
       */
-    def pick(windowPosition: Cartesian2, pickWidh:Int = 3, pickHeight:Int = 3): Cesium3DTileFeature = js.native
+    def pick(windowPosition: Cartesian2, pickWidh:Int = 3, pickHeight:Int = 3): js.Dynamic = js.native
 
     def pickPosition(windowPosition: Cartesian2, result: Cartesian3 = ???): Cartesian3 = js.native
 
@@ -12903,6 +12903,8 @@ class HeadingPitchRoll protected() extends js.Object {
   @js.native
   object EasingFunction extends js.Object {
     type Callback = js.Function1[Double, Double]
+
+    val QUADRATIC_OUT:EasingFunction = js.native
   }
 
   // todo

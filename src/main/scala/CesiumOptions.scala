@@ -1060,19 +1060,19 @@ package cesiumOptions {
   object BoxGraphicsOptions extends BoxGraphicsOptionsBuilder(noOpts)
 
   class BoxGraphicsOptionsBuilder(val dict: OptMap) extends JSOptionBuilder[BoxGraphicsOptions, BoxGraphicsOptionsBuilder](new BoxGraphicsOptionsBuilder(_)) {
-    def dimensions(v: Property) = jsOpt("dimensions", v)
+    def dimensions(v: Cartesian3) = jsOpt("dimensions", v)
 
     def show(v: Property) = jsOpt("show", v)
 
-    def fill(v: Property) = jsOpt("fill", v)
+    def fill(v: Boolean) = jsOpt("fill", v)
 
     def material(v: MaterialProperty) = jsOpt("material", v)
 
-    def outline(v: Property) = jsOpt("outline", v)
+    def outline(v: Boolean) = jsOpt("outline", v)
 
-    def outlineColor(v: Property) = jsOpt("outlineColor", v)
+    def outlineColor(v: Color) = jsOpt("outlineColor", v)
 
-    def outlineWidth(v: Property) = jsOpt("outlineWidth", v)
+    def outlineWidth(v: Float) = jsOpt("outlineWidth", v)
 
     def shadows(v: Property) = jsOpt("shadows", v)
 
@@ -1257,7 +1257,7 @@ package cesiumOptions {
 
     def description(v: Property) = jsOpt("description", v)
 
-    def position(v: PositionProperty) = jsOpt("position", v)
+    def position(v: Cartesian3) = jsOpt("position", v)
 
     def orientation(v: Property) = jsOpt("orientation", v)
 
