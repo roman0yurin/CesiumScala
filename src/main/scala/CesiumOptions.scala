@@ -15,15 +15,16 @@
 package cesiumOptions {
 
   import cesium._
-
   import cesium.Cesium.RenderState
   import org.querki.jsext.{JSOptionBuilder, OptMap, noOpts}
   import org.scalajs.dom.html.Canvas
+
   import scala.scalajs.js
   import scala.scalajs.js.annotation._
   import scala.scalajs.js.{Promise => _, _}
   import org.scalajs.dom.{Blob, Document, Element}
   import org.scalajs.dom.raw.{HTMLCanvasElement, HTMLImageElement, HTMLVideoElement}
+
   import scala.scalajs.js.typedarray.{ArrayBuffer, Float32Array, Float64Array, Int16Array, Int8Array, TypedArray, Uint16Array, Uint32Array, Uint8Array}
 
    
@@ -119,7 +120,7 @@ package cesiumOptions {
   object CesiumTerrainProviderOptions extends CesiumTerrainProviderOptionsBuilder(noOpts)
 
   class CesiumTerrainProviderOptionsBuilder(val dict: OptMap) extends JSOptionBuilder[CesiumTerrainProviderOptions, CesiumTerrainProviderOptionsBuilder](new CesiumTerrainProviderOptionsBuilder(_)) {
-    def url(v: String) = jsOpt("url", v)
+    def url(v: Any) = jsOpt("url", v)
 
     def proxy(v: Proxy) = jsOpt("proxy", v)
 
