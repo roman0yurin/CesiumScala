@@ -18,7 +18,8 @@ package cesium {
   import scala.concurrent._
   import scala.scalajs.js
   import scala.scalajs.js.annotation._
-  import scala.scalajs.js.{Promise ⇒ _, _}
+  import scala.scalajs.js.{_}
+  import scala.scalajs.js.Promise
   import org.scalajs.dom.{Blob, Document, Element}
   import org.scalajs.dom.raw.{HTMLCanvasElement, HTMLDivElement, HTMLImageElement, HTMLVideoElement}
   import org.w3c.dom.html.{HTMLElement, HTMLIFrameElement}
@@ -6131,7 +6132,7 @@ class HeadingPitchRoll protected() extends js.Object {
   object CzmlDataSource extends js.Object {
     var updaters: js.Array[js.Any] = js.native
 
-    def load(data: String | js.Any, options: CzmlDataSourceOptions = ???): Promise[CzmlDataSource] = js.native
+    def load(data: String | js.Any, options: CzmlDataSourceOptions = ???): js.Promise[CzmlDataSource] = js.native
 
     def processPacketData(`type`: js.Function, `object`: js.Any, propertyName: String, packetData: js.Any, interval: TimeInterval, sourceUri: String, entityCollection: EntityCollection): js.Dynamic = js.native
 
@@ -6178,7 +6179,7 @@ class HeadingPitchRoll protected() extends js.Object {
     var dataSourceAdded: Event = js.native
     var dataSourceRemoved: Event = js.native
 
-    def add(dataSource: DataSource | Promise[DataSource]): Promise[DataSource] = js.native
+    def add(dataSource: DataSource | Promise[_ <: DataSource]): Promise[DataSource] = js.native
 
     def remove(dataSource: DataSource, destroy: Boolean = ???): Boolean = js.native
 
@@ -7599,6 +7600,9 @@ class HeadingPitchRoll protected() extends js.Object {
     def addSamples(times: js.Array[JulianDate], positions: js.Array[Cartesian3], derivatives: js.Array[js.Array[js.Any]] = ???): js.Dynamic = js.native
 
     def addSamplesPackedArray(packedSamples: js.Array[Double], epoch: JulianDate = ???): js.Dynamic = js.native
+
+    /**Очистить список точек**/
+    def clearSamples(): Unit = js.native
   }
 
   /**
@@ -10826,6 +10830,9 @@ class HeadingPitchRoll protected() extends js.Object {
       * @type {PostProcessStageCollection}
       */
     val postProcessStages:PostProcessStageCollection = js.native
+
+    /**Поддерживается ли подрезка точек по высоте**/
+    val clampToHeightSupported:Boolean = js.native
 
     var imagerySplitPosition: ImagerySplitDirection = js.native
 
