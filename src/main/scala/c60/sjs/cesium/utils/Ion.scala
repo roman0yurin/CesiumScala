@@ -10,7 +10,7 @@ import scala.scalajs.js.Promise
 * Utility object for working with the Cesium ion API.
 * @experimental This class is part of Cesium ion beta functionality and may change without our normal deprecation policy.
 */
-@JSGlobal("Cesium.CesiumIon")
+@JSGlobal("Cesium.Ion")
 @js.native
 object Ion extends js.Object{
 
