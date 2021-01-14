@@ -11,7 +11,7 @@
 package cesium {
 
   import c60.sjs.cesium.data.Cesium3DTileset
-  import c60.sjs.cesium.scene.Cesium3DTileFeature
+  import c60.sjs.cesium.scene.{Cesium3DTileFeature, Light}
   import c60.sjs.cesium.style.{PostProcessStageCollection, PostProcessStageLibrary}
   import cesiumOptions._
   import org.scalajs.dom.html.Canvas
@@ -8784,6 +8784,7 @@ class HeadingPitchRoll protected() extends js.Object {
     var maximumScreenSpaceError: Double = js.native
     var tileCacheSize: Double = js.native
     var enableLighting: Boolean = js.native
+    var dynamicAtmosphereLighting:Boolean = js.native
     var lightingFadeOutDistance: Double = js.native
     var lightingFadeInDistance: Double = js.native
     var showWaterEffect: Boolean = js.native
@@ -10836,6 +10837,9 @@ class HeadingPitchRoll protected() extends js.Object {
     val clampToHeightSupported:Boolean = js.native
 
     var imagerySplitPosition: ImagerySplitDirection = js.native
+
+    /**Освещение сцены**/
+    var light:Light = js.native
 
     /**
       * Returns an object with a `primitive` property that contains the first (top) primitive in the scene
