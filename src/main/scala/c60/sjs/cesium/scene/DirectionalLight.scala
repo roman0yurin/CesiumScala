@@ -13,9 +13,9 @@ import scala.scalajs.js.annotation.JSGlobal
 @js.native
 @JSGlobal("Cesium.DirectionalLight")
 class DirectionalLight(
-												/**Откуда идет свет**/
-												var direction:Cartesian3 = js.native
+												options:js.Dynamic
 											) extends Light {
 
-
+	/**Откуда идет свет**/
+	var direction:Cartesian3 = js.native
 }
