@@ -509,7 +509,7 @@ class HeadingPitchRoll protected() extends js.Object {
   def this(heading: Double = 0, pitch: Double = 0, roll: Double = 0) = this()
 
   def fromQuaternion(quaternion: Quaternion, result: Quaternion) : HeadingPitchRoll = js.native
-  def fromDegrees(heading: Double, pitch: Double, roll: Double, result: Quaternion) : Quaternion = js.native
+  def fromDegrees(heading: Double, pitch: Double, roll: Double, result: HeadingPitchRoll) : HeadingPitchRoll = js.native
   def clone(headingPitchRoll: HeadingPitchRoll, result: HeadingPitchRoll) : HeadingPitchRoll = js.native
   def clone(result: HeadingPitchRoll) : HeadingPitchRoll = js.native
   def equals(left: HeadingPitchRoll, right: HeadingPitchRoll): Boolean = js.native
@@ -4239,7 +4239,7 @@ class HeadingPitchRoll protected() extends js.Object {
 
     def fromRotationMatrix(matrix: Matrix3, result: Quaternion = ???): Quaternion = js.native
 
-    def fromHeadingPitchRoll(heading: Double, pitch: Double, roll: Double, result: Quaternion = ???): Quaternion = js.native
+    def fromHeadingPitchRoll(headingPitchRoll: HeadingPitchRoll, result: Quaternion = ???): Quaternion = js.native
 
     def clone(quaternion: Quaternion, result: Quaternion = ???): Quaternion = js.native
 
