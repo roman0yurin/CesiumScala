@@ -5676,17 +5676,10 @@ class HeadingPitchRoll protected() extends js.Object {
     */
   @js.native
   @JSGlobal("Cesium.CallbackProperty")
-  class CallbackProperty protected() extends js.Object {
+  class CallbackProperty protected() extends Property {
     def this(callback: CallbackProperty.Callback, isConstant: Boolean) = this()
 
-    var isConstant: Boolean = js.native
-    var definitionChanged: Event = js.native
-
-    def getValue(time: JulianDate = ???, result: js.Any = ???): js.Dynamic = js.native
-
     def setCallback(callback: CallbackProperty.Callback, isConstant: Boolean): js.Dynamic = js.native
-
-    def equals(other: Property = ???): Boolean = js.native
   }
 
   /**
@@ -6447,7 +6440,7 @@ class HeadingPitchRoll protected() extends js.Object {
     var ellipsoid: EllipsoidGraphics = js.native
     var label: LabelGraphics = js.native
     var model: ModelGraphics = js.native
-    var orientation: Property = js.native
+    var orientation: js.UndefOr[Property] = js.native
     var path: PathGraphics = js.native
     var point: PointGraphics = js.native
     var polygon: PolygonGraphics = js.native
