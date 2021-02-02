@@ -6484,7 +6484,7 @@ class HeadingPitchRoll protected() extends js.Object {
 
     def computeAvailability(): TimeInterval = js.native
 
-    def add(entity: Entity): Entity = js.native
+    def add(entity: Entity | Dynamic): Entity = js.native
 
     def remove(entity: Entity): Boolean = js.native
 
