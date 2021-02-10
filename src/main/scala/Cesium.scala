@@ -10858,7 +10858,7 @@ class HeadingPitchRoll protected() extends js.Object {
       */
     def pick(windowPosition: Cartesian2, pickWidh:Int = 3, pickHeight:Int = 3): js.Dynamic = js.native
 
-    def pickPosition(windowPosition: Cartesian2, result: Cartesian3 = ???): Cartesian3 = js.native
+    def pickPosition(windowPosition: Cartesian2, result: Cartesian3 = ???): UndefOr[Cartesian3] = js.native
 
     def drillPick(windowPosition: Cartesian2, limit: Double = ???): js.Array[js.Any] = js.native
 
