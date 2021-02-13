@@ -11,6 +11,7 @@
 package cesium {
 
   import c60.sjs.cesium.data.Cesium3DTileset
+  import c60.sjs.cesium.request.RequestScheduler
   import c60.sjs.cesium.scene.{Cesium3DTileFeature, Light}
   import c60.sjs.cesium.style.{PostProcessStageCollection, PostProcessStageLibrary}
   import cesiumOptions._
@@ -10897,6 +10898,13 @@ class HeadingPitchRoll protected() extends js.Object {
       * @default 0.5
       */
     var requestRenderMode: Boolean = js.native
+
+
+    /**
+      * Объект отвечающий за отправку запросов на сервисы для загрузки различных ресурсов
+      * @return RequestScheduler
+      **/
+    def getRequestScheduler():RequestScheduler = js.native
   }
 
   /**
