@@ -506,11 +506,8 @@ package cesium {
 
   @js.native
 @JSGlobal("Cesium.HeadingPitchRoll")
-class HeadingPitchRoll protected() extends js.Object {
-  def this(heading: Double = 0, pitch: Double = 0, roll: Double = 0) = this()
+class HeadingPitchRoll(var heading: Double = 0, var pitch: Double = 0, var roll: Double = 0)  extends js.Object {
 
-  def fromQuaternion(quaternion: Quaternion, result: Quaternion) : HeadingPitchRoll = js.native
-  def fromDegrees(heading: Double, pitch: Double, roll: Double, result: HeadingPitchRoll) : HeadingPitchRoll = js.native
   def clone(headingPitchRoll: HeadingPitchRoll, result: HeadingPitchRoll) : HeadingPitchRoll = js.native
   def clone(result: HeadingPitchRoll) : HeadingPitchRoll = js.native
   def equals(left: HeadingPitchRoll, right: HeadingPitchRoll): Boolean = js.native
@@ -519,6 +516,13 @@ class HeadingPitchRoll protected() extends js.Object {
   def equalsEpsilon(right: HeadingPitchRoll, relativeEpsilon: Double, absoluteEpsilon: Double): Boolean = js.native
 
 }
+
+  @js.native
+  @JSGlobal("Cesium.HeadingPitchRoll")
+  object HeadingPitchRoll extends js.Object{
+    def fromQuaternion(quaternion: Quaternion, result: Quaternion) : HeadingPitchRoll = js.native
+    def fromDegrees(heading: Double, pitch: Double, roll: Double, result: HeadingPitchRoll) : HeadingPitchRoll = js.native
+  }
 
 
   /**
@@ -8293,6 +8297,9 @@ class HeadingPitchRoll protected() extends js.Object {
     var roll: Double = js.native
     var moveStart: Event = js.native
     var moveEnd: Event = js.native
+
+    @JSName("_transformChanged")
+    var transformChanged: Boolean = _
 
     def cancelFlight(): Unit = js.native
 
