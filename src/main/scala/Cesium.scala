@@ -137,7 +137,14 @@ package cesium {
                                            ellipsoid: Option[Ellipsoid],
                                            result: Option[Quaternion]): Quaternion = js.native
 
-  def localFrameToFixedFrameGenerator(firstAxis: String, secondAxis: String): js.Function = js.native
+    def localFrameToFixedFrameGenerator(firstAxis: String, secondAxis: String): js.Function = js.native
+
+    def fixedFrameToHeadingPitchRoll(
+        transform: Matrix4,
+        ellipsoid: Option[Ellipsoid] = None,
+        fixedFrameTransform: Option[Matrix4] = None,
+        result: Option[HeadingPitchRoll] = None
+    ): HeadingPitchRoll = js.native
 
   }
 
