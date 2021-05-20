@@ -1016,41 +1016,41 @@ package cesiumOptions {
   object BillboardGraphicsOptions extends BillboardGraphicsOptionsBuilder(noOpts)
 
   class BillboardGraphicsOptionsBuilder(val dict: OptMap) extends JSOptionBuilder[BillboardGraphicsOptions, BillboardGraphicsOptionsBuilder](new BillboardGraphicsOptionsBuilder(_)) {
-    def image(v: Property) = jsOpt("image", v)
+    def image(v: Property[_]) = jsOpt("image", v)
 
-    def show(v: Property) = jsOpt("show", v)
+    def show(v: Property[_]) = jsOpt("show", v)
 
-    def scale(v: Property) = jsOpt("scale", v)
+    def scale(v: Property[_]) = jsOpt("scale", v)
 
-    def horizontalOrigin(v: Property) = jsOpt("horizontalOrigin", v)
+    def horizontalOrigin(v: Property[_]) = jsOpt("horizontalOrigin", v)
 
-    def verticalOrigin(v: Property) = jsOpt("verticalOrigin", v)
+    def verticalOrigin(v: Property[_]) = jsOpt("verticalOrigin", v)
 
-    def eyeOffset(v: Property) = jsOpt("eyeOffset", v)
+    def eyeOffset(v: Property[_]) = jsOpt("eyeOffset", v)
 
-    def pixelOffset(v: Property) = jsOpt("pixelOffset", v)
+    def pixelOffset(v: Property[_]) = jsOpt("pixelOffset", v)
 
-    def rotation(v: Property) = jsOpt("rotation", v)
+    def rotation(v: Property[_]) = jsOpt("rotation", v)
 
-    def alignedAxis(v: Property) = jsOpt("alignedAxis", v)
+    def alignedAxis(v: Property[_]) = jsOpt("alignedAxis", v)
 
-    def width(v: Property) = jsOpt("width", v)
+    def width(v: Property[_]) = jsOpt("width", v)
 
-    def height(v: Property) = jsOpt("height", v)
+    def height(v: Property[_]) = jsOpt("height", v)
 
-    def color(v: Property) = jsOpt("color", v)
+    def color(v: Property[_]) = jsOpt("color", v)
 
-    def scaleByDistance(v: Property) = jsOpt("scaleByDistance", v)
+    def scaleByDistance(v: Property[_]) = jsOpt("scaleByDistance", v)
 
-    def translucencyByDistance(v: Property) = jsOpt("translucencyByDistance", v)
+    def translucencyByDistance(v: Property[_]) = jsOpt("translucencyByDistance", v)
 
-    def pixelOffsetScaleByDistance(v: Property) = jsOpt("pixelOffsetScaleByDistance", v)
+    def pixelOffsetScaleByDistance(v: Property[_]) = jsOpt("pixelOffsetScaleByDistance", v)
 
-    def imageSubRegion(v: Property) = jsOpt("imageSubRegion", v)
+    def imageSubRegion(v: Property[_]) = jsOpt("imageSubRegion", v)
 
-    def sizeInMeters(v: Property) = jsOpt("sizeInMeters", v)
+    def sizeInMeters(v: Property[_]) = jsOpt("sizeInMeters", v)
 
-    def distanceDisplayCondition(v: Property) = jsOpt("distanceDisplayCondition", v)
+    def distanceDisplayCondition(v: Property[_]) = jsOpt("distanceDisplayCondition", v)
   }
 
 
@@ -1063,7 +1063,7 @@ package cesiumOptions {
   class BoxGraphicsOptionsBuilder(val dict: OptMap) extends JSOptionBuilder[BoxGraphicsOptions, BoxGraphicsOptionsBuilder](new BoxGraphicsOptionsBuilder(_)) {
     def dimensions(v: Cartesian3) = jsOpt("dimensions", v)
 
-    def show(v: Property) = jsOpt("show", v)
+    def show(v: Property[_]) = jsOpt("show", v)
 
     def fill(v: Boolean) = jsOpt("fill", v)
 
@@ -1075,9 +1075,9 @@ package cesiumOptions {
 
     def outlineWidth(v: Float) = jsOpt("outlineWidth", v)
 
-    def shadows(v: Property) = jsOpt("shadows", v)
+    def shadows(v: Property[_]) = jsOpt("shadows", v)
 
-    def distanceDisplayCondition(v: Property) = jsOpt("distanceDisplayCondition", v)
+    def distanceDisplayCondition(v: Property[_]) = jsOpt("distanceDisplayCondition", v)
   }
 
 
@@ -1088,11 +1088,11 @@ package cesiumOptions {
   object CheckerboardMaterialPropertyOptions extends CheckerboardMaterialPropertyOptionsBuilder(noOpts)
 
   class CheckerboardMaterialPropertyOptionsBuilder(val dict: OptMap) extends JSOptionBuilder[CheckerboardMaterialPropertyOptions, CheckerboardMaterialPropertyOptionsBuilder](new CheckerboardMaterialPropertyOptionsBuilder(_)) {
-    def evenColor(v: Property) = jsOpt("evenColor", v)
+    def evenColor(v: Property[_]) = jsOpt("evenColor", v)
 
-    def oddColor(v: Property) = jsOpt("oddColor", v)
+    def oddColor(v: Property[_]) = jsOpt("oddColor", v)
 
-    def repeat(v: Property) = jsOpt("repeat", v)
+    def repeat(v: Property[_]) = jsOpt("repeat", v)
   }
 
 
@@ -1103,33 +1103,33 @@ package cesiumOptions {
   object CorridorGraphicsOptions extends CorridorGraphicsOptionsBuilder(noOpts)
 
   class CorridorGraphicsOptionsBuilder(val dict: OptMap) extends JSOptionBuilder[CorridorGraphicsOptions, CorridorGraphicsOptionsBuilder](new CorridorGraphicsOptionsBuilder(_)) {
-    def positions(v: Property) = jsOpt("positions", v)
+    def positions(v: Property[_]) = jsOpt("positions", v)
 
-    def width(v: Property) = jsOpt("width", v)
+    def width(v: Property[_]) = jsOpt("width", v)
 
-    def cornerType(v: Property) = jsOpt("cornerType", v)
+    def cornerType(v: Property[_]) = jsOpt("cornerType", v)
 
-    def height(v: Property) = jsOpt("height", v)
+    def height(v: Property[_]) = jsOpt("height", v)
 
-    def extrudedHeight(v: Property) = jsOpt("extrudedHeight", v)
+    def extrudedHeight(v: Property[_]) = jsOpt("extrudedHeight", v)
 
-    def show(v: Property) = jsOpt("show", v)
+    def show(v: Property[_]) = jsOpt("show", v)
 
-    def fill(v: Property) = jsOpt("fill", v)
+    def fill(v: Property[_]) = jsOpt("fill", v)
 
     def material(v: MaterialProperty) = jsOpt("material", v)
 
-    def outline(v: Property) = jsOpt("outline", v)
+    def outline(v: Property[_]) = jsOpt("outline", v)
 
-    def outlineColor(v: Property) = jsOpt("outlineColor", v)
+    def outlineColor(v: Property[_]) = jsOpt("outlineColor", v)
 
-    def outlineWidth(v: Property) = jsOpt("outlineWidth", v)
+    def outlineWidth(v: Property[_]) = jsOpt("outlineWidth", v)
 
-    def granularity(v: Property) = jsOpt("granularity", v)
+    def granularity(v: Property[_]) = jsOpt("granularity", v)
 
-    def shadows(v: Property) = jsOpt("shadows", v)
+    def shadows(v: Property[_]) = jsOpt("shadows", v)
 
-    def distanceDisplayCondition(v: Property) = jsOpt("distanceDisplayCondition", v)
+    def distanceDisplayCondition(v: Property[_]) = jsOpt("distanceDisplayCondition", v)
   }
 
 
@@ -1140,31 +1140,31 @@ package cesiumOptions {
   object CylinderGraphicsOptions extends CylinderGraphicsOptionsBuilder(noOpts)
 
   class CylinderGraphicsOptionsBuilder(val dict: OptMap) extends JSOptionBuilder[CylinderGraphicsOptions, CylinderGraphicsOptionsBuilder](new CylinderGraphicsOptionsBuilder(_)) {
-    def length(v: Property) = jsOpt("length", v)
+    def length(v: Property[_]) = jsOpt("length", v)
 
-    def topRadius(v: Property) = jsOpt("topRadius", v)
+    def topRadius(v: Property[_]) = jsOpt("topRadius", v)
 
-    def bottomRadius(v: Property) = jsOpt("bottomRadius", v)
+    def bottomRadius(v: Property[_]) = jsOpt("bottomRadius", v)
 
-    def show(v: Property) = jsOpt("show", v)
+    def show(v: Property[_]) = jsOpt("show", v)
 
-    def fill(v: Property) = jsOpt("fill", v)
+    def fill(v: Property[_]) = jsOpt("fill", v)
 
     def material(v: MaterialProperty) = jsOpt("material", v)
 
-    def outline(v: Property) = jsOpt("outline", v)
+    def outline(v: Property[_]) = jsOpt("outline", v)
 
-    def outlineColor(v: Property) = jsOpt("outlineColor", v)
+    def outlineColor(v: Property[_]) = jsOpt("outlineColor", v)
 
-    def outlineWidth(v: Property) = jsOpt("outlineWidth", v)
+    def outlineWidth(v: Property[_]) = jsOpt("outlineWidth", v)
 
-    def numberOfVerticalLines(v: Property) = jsOpt("numberOfVerticalLines", v)
+    def numberOfVerticalLines(v: Property[_]) = jsOpt("numberOfVerticalLines", v)
 
-    def slices(v: Property) = jsOpt("slices", v)
+    def slices(v: Property[_]) = jsOpt("slices", v)
 
-    def shadows(v: Property) = jsOpt("shadows", v)
+    def shadows(v: Property[_]) = jsOpt("shadows", v)
 
-    def distanceDisplayCondition(v: Property) = jsOpt("distanceDisplayCondition", v)
+    def distanceDisplayCondition(v: Property[_]) = jsOpt("distanceDisplayCondition", v)
   }
 
 
@@ -1191,21 +1191,21 @@ package cesiumOptions {
 
   class EllipseGraphicsOptionsBuilder(val dict: OptMap) extends JSOptionBuilder[EllipseGraphicsOptions, EllipseGraphicsOptionsBuilder](new EllipseGraphicsOptionsBuilder(_)) {
 
-    def semiMajorAxis(v: Property) = jsOpt("semiMajorAxis", v)
-    def semiMinorAxis(v: Property) = jsOpt("semiMinorAxis", v)
-    def height(v: Property) = jsOpt("height", v)
-    def extrudedHeight(v: Property) = jsOpt("extrudedHeight", v)
-    def show(v: Property) = jsOpt("show", v)
-    def fill(v: Property) = jsOpt("fill", v)
+    def semiMajorAxis(v: Property[_]) = jsOpt("semiMajorAxis", v)
+    def semiMinorAxis(v: Property[_]) = jsOpt("semiMinorAxis", v)
+    def height(v: Property[_]) = jsOpt("height", v)
+    def extrudedHeight(v: Property[_]) = jsOpt("extrudedHeight", v)
+    def show(v: Property[_]) = jsOpt("show", v)
+    def fill(v: Property[_]) = jsOpt("fill", v)
     def material(v: MaterialProperty) = jsOpt("material", v)
-    def outline(v: Property) = jsOpt("outline", v)
-    def outlineColor(v: Property) = jsOpt("outlineColor", v)
-    def outlineWidth(v: Property) = jsOpt("outlineWidth", v)
-    def rotation(v: Property) = jsOpt("rotation", v)
-    def stRotation(v: Property) = jsOpt("stRotation", v)
-    def granularity(v: Property) = jsOpt("granularity", v)
-    def numberOfVerticalLines(v: Property) = jsOpt("numberOfVerticalLines", v)
-    def distanceDisplayCondition(v: Property) = jsOpt("distanceDisplayCondition", v)
+    def outline(v: Property[_]) = jsOpt("outline", v)
+    def outlineColor(v: Property[_]) = jsOpt("outlineColor", v)
+    def outlineWidth(v: Property[_]) = jsOpt("outlineWidth", v)
+    def rotation(v: Property[_]) = jsOpt("rotation", v)
+    def stRotation(v: Property[_]) = jsOpt("stRotation", v)
+    def granularity(v: Property[_]) = jsOpt("granularity", v)
+    def numberOfVerticalLines(v: Property[_]) = jsOpt("numberOfVerticalLines", v)
+    def distanceDisplayCondition(v: Property[_]) = jsOpt("distanceDisplayCondition", v)
   }
 
    
@@ -1215,29 +1215,29 @@ package cesiumOptions {
   object EllipsoidGraphicsOptions extends EllipsoidGraphicsOptionsBuilder(noOpts)
 
   class EllipsoidGraphicsOptionsBuilder(val dict: OptMap) extends JSOptionBuilder[EllipsoidGraphicsOptions, EllipsoidGraphicsOptionsBuilder](new EllipsoidGraphicsOptionsBuilder(_)) {
-    def radii(v: Property) = jsOpt("radii", v)
+    def radii(v: Property[_]) = jsOpt("radii", v)
 
-    def subdivisions(v: Property) = jsOpt("subdivisions", v)
+    def subdivisions(v: Property[_]) = jsOpt("subdivisions", v)
 
-    def stackPartitions(v: Property) = jsOpt("stackPartitions", v)
+    def stackPartitions(v: Property[_]) = jsOpt("stackPartitions", v)
 
-    def show(v: Property) = jsOpt("show", v)
+    def show(v: Property[_]) = jsOpt("show", v)
 
-    def fill(v: Property) = jsOpt("fill", v)
+    def fill(v: Property[_]) = jsOpt("fill", v)
 
     def material(v: MaterialProperty) = jsOpt("material", v)
 
-    def outline(v: Property) = jsOpt("outline", v)
+    def outline(v: Property[_]) = jsOpt("outline", v)
 
-    def outlineColor(v: Property) = jsOpt("outlineColor", v)
+    def outlineColor(v: Property[_]) = jsOpt("outlineColor", v)
 
-    def outlineWidth(v: Property) = jsOpt("outlineWidth", v)
+    def outlineWidth(v: Property[_]) = jsOpt("outlineWidth", v)
 
-    def slicePartitions(v: Property) = jsOpt("slicePartitions", v)
+    def slicePartitions(v: Property[_]) = jsOpt("slicePartitions", v)
 
-    def shadows(v: Property) = jsOpt("shadows", v)
+    def shadows(v: Property[_]) = jsOpt("shadows", v)
 
-    def distanceDisplayCondition(v: Property) = jsOpt("distanceDisplayCondition", v)
+    def distanceDisplayCondition(v: Property[_]) = jsOpt("distanceDisplayCondition", v)
   }
 
 
@@ -1256,13 +1256,13 @@ package cesiumOptions {
 
     def show(v: Boolean) = jsOpt("show", v)
 
-    def description(v: Property) = jsOpt("description", v)
+    def description(v: Property[_]) = jsOpt("description", v)
 
     def position(v: Cartesian3) = jsOpt("position", v)
 
-    def orientation(v: Property) = jsOpt("orientation", v)
+    def orientation(v: Property[_]) = jsOpt("orientation", v)
 
-    def viewFrom(v: Property) = jsOpt("viewFrom", v)
+    def viewFrom(v: Property[_]) = jsOpt("viewFrom", v)
 
     def parent(v: Entity) = jsOpt("parent", v)
 
@@ -1305,15 +1305,15 @@ package cesiumOptions {
   object GridMaterialPropertyOptions extends GridMaterialPropertyOptionsBuilder(noOpts)
 
   class GridMaterialPropertyOptionsBuilder(val dict: OptMap) extends JSOptionBuilder[GridMaterialPropertyOptions, GridMaterialPropertyOptionsBuilder](new GridMaterialPropertyOptionsBuilder(_)) {
-    def color(v: Property) = jsOpt("color", v)
+    def color(v: Property[_]) = jsOpt("color", v)
 
-    def cellAlpha(v: Property) = jsOpt("cellAlpha", v)
+    def cellAlpha(v: Property[_]) = jsOpt("cellAlpha", v)
 
-    def lineCount(v: Property) = jsOpt("lineCount", v)
+    def lineCount(v: Property[_]) = jsOpt("lineCount", v)
 
-    def lineThickness(v: Property) = jsOpt("lineThickness", v)
+    def lineThickness(v: Property[_]) = jsOpt("lineThickness", v)
 
-    def lineOffset(v: Property) = jsOpt("lineOffset", v)
+    def lineOffset(v: Property[_]) = jsOpt("lineOffset", v)
   }
 
 
@@ -1324,13 +1324,13 @@ package cesiumOptions {
   object ImageMaterialPropertyOptions extends ImageMaterialPropertyOptionsBuilder(noOpts)
 
   class ImageMaterialPropertyOptionsBuilder(val dict: OptMap) extends JSOptionBuilder[ImageMaterialPropertyOptions, ImageMaterialPropertyOptionsBuilder](new ImageMaterialPropertyOptionsBuilder(_)) {
-    def image(v: Property) = jsOpt("image", v)
+    def image(v: Property[_]) = jsOpt("image", v)
 
-    def repeat(v: Property) = jsOpt("repeat", v)
+    def repeat(v: Property[_]) = jsOpt("repeat", v)
 
-    def color(v: Property) = jsOpt("color", v)
+    def color(v: Property[_]) = jsOpt("color", v)
 
-    def transparent(v: Property) = jsOpt("transparent", v)
+    def transparent(v: Property[_]) = jsOpt("transparent", v)
   }
 
 
@@ -1340,37 +1340,37 @@ package cesiumOptions {
   object LabelGraphicsOptions extends LabelGraphicsOptionsBuilder(noOpts)
 
   class LabelGraphicsOptionsBuilder(val dict: OptMap) extends JSOptionBuilder[LabelGraphicsOptions, LabelGraphicsOptionsBuilder](new LabelGraphicsOptionsBuilder(_)) {
-    def text(v: Property) = jsOpt("text", v)
+    def text(v: Property[_]) = jsOpt("text", v)
 
-    def font(v: Property) = jsOpt("font", v)
+    def font(v: Property[_]) = jsOpt("font", v)
 
-    def style(v: Property) = jsOpt("style", v)
+    def style(v: Property[_]) = jsOpt("style", v)
 
-    def fillColor(v: Property) = jsOpt("fillColor", v)
+    def fillColor(v: Property[_]) = jsOpt("fillColor", v)
 
-    def outlineColor(v: Property) = jsOpt("outlineColor", v)
+    def outlineColor(v: Property[_]) = jsOpt("outlineColor", v)
 
-    def outlineWidth(v: Property) = jsOpt("outlineWidth", v)
+    def outlineWidth(v: Property[_]) = jsOpt("outlineWidth", v)
 
-    def show(v: Property) = jsOpt("show", v)
+    def show(v: Property[_]) = jsOpt("show", v)
 
-    def horizontalOrigin(v: Property) = jsOpt("horizontalOrigin", v)
+    def horizontalOrigin(v: Property[_]) = jsOpt("horizontalOrigin", v)
 
-    def verticalOrigin(v: Property) = jsOpt("verticalOrigin", v)
+    def verticalOrigin(v: Property[_]) = jsOpt("verticalOrigin", v)
 
-    def eyeOffset(v: Property) = jsOpt("eyeOffset", v)
+    def eyeOffset(v: Property[_]) = jsOpt("eyeOffset", v)
 
-    def pixelOffset(v: Property) = jsOpt("pixelOffset", v)
+    def pixelOffset(v: Property[_]) = jsOpt("pixelOffset", v)
 
-    def translucencyByDistance(v: Property) = jsOpt("translucencyByDistance", v)
+    def translucencyByDistance(v: Property[_]) = jsOpt("translucencyByDistance", v)
 
-    def pixelOffsetScaleByDistance(v: Property) = jsOpt("pixelOffsetScaleByDistance", v)
+    def pixelOffsetScaleByDistance(v: Property[_]) = jsOpt("pixelOffsetScaleByDistance", v)
 
-    def distanceDisplayCondition(v: Property) = jsOpt("distanceDisplayCondition", v)
+    def distanceDisplayCondition(v: Property[_]) = jsOpt("distanceDisplayCondition", v)
 
-    def showBackground(v: Property) = jsOpt("showBackground", v)
-    def backgroundColor(v: Property) = jsOpt("backgroundColor", v)
-    def backgroundPadding(v: Property) = jsOpt("backgroundPadding", v)
+    def showBackground(v: Property[_]) = jsOpt("showBackground", v)
+    def backgroundColor(v: Property[_]) = jsOpt("backgroundColor", v)
+    def backgroundPadding(v: Property[_]) = jsOpt("backgroundPadding", v)
 
   }
 
@@ -1382,38 +1382,38 @@ package cesiumOptions {
   object ModelGraphicsOptions extends ModelGraphicsOptionsBuilder(noOpts)
 
   class ModelGraphicsOptionsBuilder(val dict: OptMap) extends JSOptionBuilder[ModelGraphicsOptions, ModelGraphicsOptionsBuilder](new ModelGraphicsOptionsBuilder(_)) {
-    def uri(v: Property) = jsOpt("uri", v)
+    def uri(v: Property[_]) = jsOpt("uri", v)
 
-    def show(v: Property) = jsOpt("show", v)
+    def show(v: Property[_]) = jsOpt("show", v)
 
-    def scale(v: Property) = jsOpt("scale", v)
+    def scale(v: Property[_]) = jsOpt("scale", v)
 
-    def minimumPixelSize(v: Property) = jsOpt("minimumPixelSize", v)
+    def minimumPixelSize(v: Property[_]) = jsOpt("minimumPixelSize", v)
 
-    def maximumScale(v: Property) = jsOpt("maximumScale", v)
+    def maximumScale(v: Property[_]) = jsOpt("maximumScale", v)
 
-    def incrementallyLoadTextures(v: Property) = jsOpt("incrementallyLoadTextures", v)
+    def incrementallyLoadTextures(v: Property[_]) = jsOpt("incrementallyLoadTextures", v)
 
-    def runAnimations(v: Property) = jsOpt("runAnimations", v)
+    def runAnimations(v: Property[_]) = jsOpt("runAnimations", v)
 
-    def nodeTransformations(v: Property) = jsOpt("nodeTransformations", v)
+    def nodeTransformations(v: Property[_]) = jsOpt("nodeTransformations", v)
 
-  //  def castShadows(v: Property) = jsOpt("castShadows", v)
-  //  def receiveShadows(v: Property) = jsOpt("receiveShadows", v)
+  //  def castShadows(v: Property[_]) = jsOpt("castShadows", v)
+  //  def receiveShadows(v: Property[_]) = jsOpt("receiveShadows", v)
 
-    def shadows(v: Property) = jsOpt("shadows", v)
+    def shadows(v: Property[_]) = jsOpt("shadows", v)
 
-    def distanceDisplayCondition(v: Property) = jsOpt("distanceDisplayCondition", v)
+    def distanceDisplayCondition(v: Property[_]) = jsOpt("distanceDisplayCondition", v)
 
-    def color(v: Property) = jsOpt("color", v)
+    def color(v: Property[_]) = jsOpt("color", v)
 
-    def colorBlendMode(v: Property) = jsOpt("colorBlendMode", v)
+    def colorBlendMode(v: Property[_]) = jsOpt("colorBlendMode", v)
 
-    def colorBlendAmount(v: Property) = jsOpt("colorBlendAmount", v)
+    def colorBlendAmount(v: Property[_]) = jsOpt("colorBlendAmount", v)
 
-    def silhouetteColor(v: Property) = jsOpt("silhouetteColor", v)
+    def silhouetteColor(v: Property[_]) = jsOpt("silhouetteColor", v)
 
-    def silhouetteSize(v: Property) = jsOpt("silhouetteSize", v)
+    def silhouetteSize(v: Property[_]) = jsOpt("silhouetteSize", v)
   }
 
   @js.native
@@ -1422,11 +1422,11 @@ package cesiumOptions {
   object NodeTransformationPropertyOptions extends NodeTransformationPropertyOptionsBuilder(noOpts)
 
   class NodeTransformationPropertyOptionsBuilder(val dict: OptMap) extends JSOptionBuilder[NodeTransformationPropertyOptions, NodeTransformationPropertyOptionsBuilder](new NodeTransformationPropertyOptionsBuilder(_)) {
-    def translation(v: Property) = jsOpt("translation", v)
+    def translation(v: Property[_]) = jsOpt("translation", v)
 
-    def rotation(v: Property) = jsOpt("rotation", v)
+    def rotation(v: Property[_]) = jsOpt("rotation", v)
 
-    def scale(v: Property) = jsOpt("scale", v)
+    def scale(v: Property[_]) = jsOpt("scale", v)
   }
 
 
@@ -1437,19 +1437,19 @@ package cesiumOptions {
   object PathGraphicsOptions extends PathGraphicsOptionsBuilder(noOpts)
 
   class PathGraphicsOptionsBuilder(val dict: OptMap) extends JSOptionBuilder[PathGraphicsOptions, PathGraphicsOptionsBuilder](new PathGraphicsOptionsBuilder(_)) {
-    def leadTime(v: Property) = jsOpt("leadTime", v)
+    def leadTime(v: Property[_]) = jsOpt("leadTime", v)
 
-    def trailTime(v: Property) = jsOpt("trailTime", v)
+    def trailTime(v: Property[_]) = jsOpt("trailTime", v)
 
-    def show(v: Property) = jsOpt("show", v)
+    def show(v: Property[_]) = jsOpt("show", v)
 
-    def width(v: Property) = jsOpt("width", v)
+    def width(v: Property[_]) = jsOpt("width", v)
 
     def material(v: MaterialProperty) = jsOpt("material", v)
 
-    def resolution(v: Property) = jsOpt("resolution", v)
+    def resolution(v: Property[_]) = jsOpt("resolution", v)
 
-    def distanceDisplayCondition(v: Property) = jsOpt("distanceDisplayCondition", v)
+    def distanceDisplayCondition(v: Property[_]) = jsOpt("distanceDisplayCondition", v)
   }
 
 
@@ -1460,21 +1460,21 @@ package cesiumOptions {
   object PointGraphicsOptions extends PointGraphicsOptionsBuilder(noOpts)
 
   class PointGraphicsOptionsBuilder(val dict: OptMap) extends JSOptionBuilder[PointGraphicsOptions, PointGraphicsOptionsBuilder](new PointGraphicsOptionsBuilder(_)) {
-    def color(v: Property) = jsOpt("color", v)
+    def color(v: Property[_]) = jsOpt("color", v)
 
-    def pixelSize(v: Property) = jsOpt("pixelSize", v)
+    def pixelSize(v: Property[_]) = jsOpt("pixelSize", v)
 
-    def outlineColor(v: Property) = jsOpt("outlineColor", v)
+    def outlineColor(v: Property[_]) = jsOpt("outlineColor", v)
 
-    def outlineWidth(v: Property) = jsOpt("outlineWidth", v)
+    def outlineWidth(v: Property[_]) = jsOpt("outlineWidth", v)
 
-    def show(v: Property) = jsOpt("show", v)
+    def show(v: Property[_]) = jsOpt("show", v)
 
-    def scaleByDistance(v: Property) = jsOpt("scaleByDistance", v)
+    def scaleByDistance(v: Property[_]) = jsOpt("scaleByDistance", v)
 
-    def translucencyByDistance(v: Property) = jsOpt("translucencyByDistance", v)
+    def translucencyByDistance(v: Property[_]) = jsOpt("translucencyByDistance", v)
 
-    def distanceDisplayCondition(v: Property) = jsOpt("distanceDisplayCondition", v)
+    def distanceDisplayCondition(v: Property[_]) = jsOpt("distanceDisplayCondition", v)
   }
 
 
@@ -1485,37 +1485,37 @@ package cesiumOptions {
   object PolygonGraphicsOptions extends PolygonGraphicsOptionsBuilder(noOpts)
 
   class PolygonGraphicsOptionsBuilder(val dict: OptMap) extends JSOptionBuilder[PolygonGraphicsOptions, PolygonGraphicsOptionsBuilder](new PolygonGraphicsOptionsBuilder(_)) {
-    def hierarchy(v: Property) = jsOpt("hierarchy", v)
+    def hierarchy(v: Property[_]) = jsOpt("hierarchy", v)
 
-    def height(v: Property) = jsOpt("height", v)
+    def height(v: Property[_]) = jsOpt("height", v)
 
-    def extrudedHeight(v: Property) = jsOpt("extrudedHeight", v)
+    def extrudedHeight(v: Property[_]) = jsOpt("extrudedHeight", v)
 
-    def show(v: Property) = jsOpt("show", v)
+    def show(v: Property[_]) = jsOpt("show", v)
 
-    def fill(v: Property) = jsOpt("fill", v)
+    def fill(v: Property[_]) = jsOpt("fill", v)
 
     def material(v: MaterialProperty) = jsOpt("material", v)
 
-    def outline(v: Property) = jsOpt("outline", v)
+    def outline(v: Property[_]) = jsOpt("outline", v)
 
-    def outlineColor(v: Property) = jsOpt("outlineColor", v)
+    def outlineColor(v: Property[_]) = jsOpt("outlineColor", v)
 
-    def outlineWidth(v: Property) = jsOpt("outlineWidth", v)
+    def outlineWidth(v: Property[_]) = jsOpt("outlineWidth", v)
 
-    def granularity(v: Property) = jsOpt("granularity", v)
+    def granularity(v: Property[_]) = jsOpt("granularity", v)
 
-    def stRotation(v: Property) = jsOpt("stRotation", v)
+    def stRotation(v: Property[_]) = jsOpt("stRotation", v)
 
-    def perPositionHeight(v: Property) = jsOpt("perPositionHeight", v)
+    def perPositionHeight(v: Property[_]) = jsOpt("perPositionHeight", v)
 
     def closeTop(v: Boolean) = jsOpt("closeTop", v)
 
     def closeBottom(v: Boolean) = jsOpt("closeBottom", v)
 
-    def shadows(v: Property) = jsOpt("shadows", v)
+    def shadows(v: Property[_]) = jsOpt("shadows", v)
 
-    def distanceDisplayCondition(v: Property) = jsOpt("distanceDisplayCondition", v)
+    def distanceDisplayCondition(v: Property[_]) = jsOpt("distanceDisplayCondition", v)
   }
 
 
@@ -1526,9 +1526,9 @@ package cesiumOptions {
   object PolylineGlowMaterialPropertyOptions extends PolylineGlowMaterialPropertyOptionsBuilder(noOpts)
 
   class PolylineGlowMaterialPropertyOptionsBuilder(val dict: OptMap) extends JSOptionBuilder[PolylineGlowMaterialPropertyOptions, PolylineGlowMaterialPropertyOptionsBuilder](new PolylineGlowMaterialPropertyOptionsBuilder(_)) {
-    def color(v: Property) = jsOpt("color", v)
+    def color(v: Property[_]) = jsOpt("color", v)
 
-    def glowPower(v: Property) = jsOpt("glowPower", v)
+    def glowPower(v: Property[_]) = jsOpt("glowPower", v)
   }
 
 
@@ -1539,21 +1539,21 @@ package cesiumOptions {
   object PolylineGraphicsOptions extends PolylineGraphicsOptionsBuilder(noOpts)
 
   class PolylineGraphicsOptionsBuilder(val dict: OptMap) extends JSOptionBuilder[PolylineGraphicsOptions, PolylineGraphicsOptionsBuilder](new PolylineGraphicsOptionsBuilder(_)) {
-    def positions(v: Property) = jsOpt("positions", v)
+    def positions(v: Property[_]) = jsOpt("positions", v)
 
-    def width(v: Property) = jsOpt("width", v)
+    def width(v: Property[_]) = jsOpt("width", v)
 
-    def followSurface(v: Property) = jsOpt("followSurface", v)
+    def followSurface(v: Property[_]) = jsOpt("followSurface", v)
 
-    def show(v: Property) = jsOpt("show", v)
+    def show(v: Property[_]) = jsOpt("show", v)
 
     def material(v: MaterialProperty) = jsOpt("material", v)
 
-    def granularity(v: Property) = jsOpt("granularity", v)
+    def granularity(v: Property[_]) = jsOpt("granularity", v)
 
-    def shadows(v: Property) = jsOpt("shadows", v)
+    def shadows(v: Property[_]) = jsOpt("shadows", v)
 
-    def distanceDisplayCondition(v: Property) = jsOpt("distanceDisplayCondition", v)
+    def distanceDisplayCondition(v: Property[_]) = jsOpt("distanceDisplayCondition", v)
   }
 
 
@@ -1564,11 +1564,11 @@ package cesiumOptions {
   object PolylineOutlineMaterialPropertyOptions extends PolylineOutlineMaterialPropertyOptionsBuilder(noOpts)
 
   class PolylineOutlineMaterialPropertyOptionsBuilder(val dict: OptMap) extends JSOptionBuilder[PolylineOutlineMaterialPropertyOptions, PolylineOutlineMaterialPropertyOptionsBuilder](new PolylineOutlineMaterialPropertyOptionsBuilder(_)) {
-    def color(v: Property) = jsOpt("color", v)
+    def color(v: Property[_]) = jsOpt("color", v)
 
-    def outlineColor(v: Property) = jsOpt("outlineColor", v)
+    def outlineColor(v: Property[_]) = jsOpt("outlineColor", v)
 
-    def outlineWidth(v: Property) = jsOpt("outlineWidth", v)
+    def outlineWidth(v: Property[_]) = jsOpt("outlineWidth", v)
   }
 
 
@@ -1579,29 +1579,29 @@ package cesiumOptions {
   object PolylineVolumeGraphicsOptions extends PolylineVolumeGraphicsOptionsBuilder(noOpts)
 
   class PolylineVolumeGraphicsOptionsBuilder(val dict: OptMap) extends JSOptionBuilder[PolylineVolumeGraphicsOptions, PolylineVolumeGraphicsOptionsBuilder](new PolylineVolumeGraphicsOptionsBuilder(_)) {
-    def positions(v: Property) = jsOpt("positions", v)
+    def positions(v: Property[_]) = jsOpt("positions", v)
 
-    def cornerType(v: Property) = jsOpt("cornerType", v)
+    def cornerType(v: Property[_]) = jsOpt("cornerType", v)
 
-    def shape(v: Property) = jsOpt("shape", v)
+    def shape(v: Property[_]) = jsOpt("shape", v)
 
-    def show(v: Property) = jsOpt("show", v)
+    def show(v: Property[_]) = jsOpt("show", v)
 
-    def fill(v: Property) = jsOpt("fill", v)
+    def fill(v: Property[_]) = jsOpt("fill", v)
 
     def material(v: MaterialProperty) = jsOpt("material", v)
 
-    def outline(v: Property) = jsOpt("outline", v)
+    def outline(v: Property[_]) = jsOpt("outline", v)
 
-    def outlineColor(v: Property) = jsOpt("outlineColor", v)
+    def outlineColor(v: Property[_]) = jsOpt("outlineColor", v)
 
-    def outlineWidth(v: Property) = jsOpt("outlineWidth", v)
+    def outlineWidth(v: Property[_]) = jsOpt("outlineWidth", v)
 
-    def granularity(v: Property) = jsOpt("granularity", v)
+    def granularity(v: Property[_]) = jsOpt("granularity", v)
 
-    def shadows(v: Property) = jsOpt("shadows", v)
+    def shadows(v: Property[_]) = jsOpt("shadows", v)
 
-    def distanceDisplayCondition(v: Property) = jsOpt("distanceDisplayCondition", v)
+    def distanceDisplayCondition(v: Property[_]) = jsOpt("distanceDisplayCondition", v)
   }
 
 
@@ -1612,37 +1612,37 @@ package cesiumOptions {
   object RectangleGraphicsOptions extends RectangleGraphicsOptionsBuilder(noOpts)
 
   class RectangleGraphicsOptionsBuilder(val dict: OptMap) extends JSOptionBuilder[RectangleGraphicsOptions, RectangleGraphicsOptionsBuilder](new RectangleGraphicsOptionsBuilder(_)) {
-    def coordinates(v: Property) = jsOpt("coordinates", v)
+    def coordinates(v: Property[_]) = jsOpt("coordinates", v)
 
-    def height(v: Property) = jsOpt("height", v)
+    def height(v: Property[_]) = jsOpt("height", v)
 
-    def extrudedHeight(v: Property) = jsOpt("extrudedHeight", v)
+    def extrudedHeight(v: Property[_]) = jsOpt("extrudedHeight", v)
 
-    def show(v: Property) = jsOpt("show", v)
+    def show(v: Property[_]) = jsOpt("show", v)
 
-    def fill(v: Property) = jsOpt("fill", v)
+    def fill(v: Property[_]) = jsOpt("fill", v)
 
     def material(v: MaterialProperty) = jsOpt("material", v)
 
-    def outline(v: Property) = jsOpt("outline", v)
+    def outline(v: Property[_]) = jsOpt("outline", v)
 
-    def outlineColor(v: Property) = jsOpt("outlineColor", v)
+    def outlineColor(v: Property[_]) = jsOpt("outlineColor", v)
 
-    def outlineWidth(v: Property) = jsOpt("outlineWidth", v)
+    def outlineWidth(v: Property[_]) = jsOpt("outlineWidth", v)
 
-    def granularity(v: Property) = jsOpt("granularity", v)
+    def granularity(v: Property[_]) = jsOpt("granularity", v)
 
-    def closeTop(v: Property) = jsOpt("closeTop", v)
+    def closeTop(v: Property[_]) = jsOpt("closeTop", v)
 
-    def closeBottom(v: Property) = jsOpt("closeBottom", v)
+    def closeBottom(v: Property[_]) = jsOpt("closeBottom", v)
 
-    def rotation(v: Property) = jsOpt("rotation", v)
+    def rotation(v: Property[_]) = jsOpt("rotation", v)
 
-    def stRotation(v: Property) = jsOpt("stRotation", v)
+    def stRotation(v: Property[_]) = jsOpt("stRotation", v)
 
-    def shadows(v: Property) = jsOpt("shadows", v)
+    def shadows(v: Property[_]) = jsOpt("shadows", v)
 
-    def distanceDisplayCondition(v: Property) = jsOpt("distanceDisplayCondition", v)
+    def distanceDisplayCondition(v: Property[_]) = jsOpt("distanceDisplayCondition", v)
   }
 
 
@@ -1653,15 +1653,15 @@ package cesiumOptions {
   object StripeMaterialPropertyOptions extends StripeMaterialPropertyOptionsBuilder(noOpts)
 
   class StripeMaterialPropertyOptionsBuilder(val dict: OptMap) extends JSOptionBuilder[StripeMaterialPropertyOptions, StripeMaterialPropertyOptionsBuilder](new StripeMaterialPropertyOptionsBuilder(_)) {
-    def evenColor(v: Property) = jsOpt("evenColor", v)
+    def evenColor(v: Property[_]) = jsOpt("evenColor", v)
 
-    def oddColor(v: Property) = jsOpt("oddColor", v)
+    def oddColor(v: Property[_]) = jsOpt("oddColor", v)
 
-    def repeat(v: Property) = jsOpt("repeat", v)
+    def repeat(v: Property[_]) = jsOpt("repeat", v)
 
-    def offset(v: Property) = jsOpt("offset", v)
+    def offset(v: Property[_]) = jsOpt("offset", v)
 
-    def orientation(v: Property) = jsOpt("orientation", v)
+    def orientation(v: Property[_]) = jsOpt("orientation", v)
   }
 
 
@@ -1672,29 +1672,29 @@ package cesiumOptions {
   object WallGraphicsOptions extends WallGraphicsOptionsBuilder(noOpts)
 
   class WallGraphicsOptionsBuilder(val dict: OptMap) extends JSOptionBuilder[WallGraphicsOptions, WallGraphicsOptionsBuilder](new WallGraphicsOptionsBuilder(_)) {
-    def positions(v: Property) = jsOpt("positions", v)
+    def positions(v: Property[_]) = jsOpt("positions", v)
 
-    def maximumHeights(v: Property) = jsOpt("maximumHeights", v)
+    def maximumHeights(v: Property[_]) = jsOpt("maximumHeights", v)
 
-    def minimumHeights(v: Property) = jsOpt("minimumHeights", v)
+    def minimumHeights(v: Property[_]) = jsOpt("minimumHeights", v)
 
-    def show(v: Property) = jsOpt("show", v)
+    def show(v: Property[_]) = jsOpt("show", v)
 
-    def fill(v: Property) = jsOpt("fill", v)
+    def fill(v: Property[_]) = jsOpt("fill", v)
 
     def material(v: MaterialProperty) = jsOpt("material", v)
 
-    def outline(v: Property) = jsOpt("outline", v)
+    def outline(v: Property[_]) = jsOpt("outline", v)
 
-    def outlineColor(v: Property) = jsOpt("outlineColor", v)
+    def outlineColor(v: Property[_]) = jsOpt("outlineColor", v)
 
-    def outlineWidth(v: Property) = jsOpt("outlineWidth", v)
+    def outlineWidth(v: Property[_]) = jsOpt("outlineWidth", v)
 
-    def granularity(v: Property) = jsOpt("granularity", v)
+    def granularity(v: Property[_]) = jsOpt("granularity", v)
 
-    def shadows(v: Property) = jsOpt("shadows", v)
+    def shadows(v: Property[_]) = jsOpt("shadows", v)
 
-    def distanceDisplayCondition(v: Property) = jsOpt("distanceDisplayCondition", v)
+    def distanceDisplayCondition(v: Property[_]) = jsOpt("distanceDisplayCondition", v)
   }
 
 
@@ -2102,9 +2102,9 @@ package cesiumOptions {
     def colorBlendMode(v: ColorBlendMode) = jsOpt("colorBlendMode", v)
     def colorBlendAmount(v: Double) = jsOpt("colorBlendAmount", v)
 
-    def silhouetteColor(v: Property) = jsOpt("silhouetteColor", v)
+    def silhouetteColor(v: Property[_]) = jsOpt("silhouetteColor", v)
 
-    def silhouetteSize(v: Property) = jsOpt("silhouetteSize", v)
+    def silhouetteSize(v: Property[_]) = jsOpt("silhouetteSize", v)
   }
 
    
@@ -3115,29 +3115,29 @@ package cesiumOptions {
 
     def position(v: Cartesian3) = jsOpt("position", v)
 
-    def text(v: Property) = jsOpt("text", v)
+    def text(v: Property[_]) = jsOpt("text", v)
 
-    def font(v: Property) = jsOpt("font", v)
+    def font(v: Property[_]) = jsOpt("font", v)
 
-    def style(v: Property) = jsOpt("style", v)
+    def style(v: Property[_]) = jsOpt("style", v)
 
-    def fillColor(v: Property) = jsOpt("fillColor", v)
+    def fillColor(v: Property[_]) = jsOpt("fillColor", v)
 
-    def outlineColor(v: Property) = jsOpt("outlineColor", v)
+    def outlineColor(v: Property[_]) = jsOpt("outlineColor", v)
 
-    def show(v: Property) = jsOpt("show", v)
+    def show(v: Property[_]) = jsOpt("show", v)
 
-    def horizontalOrigin(v: Property) = jsOpt("horizontalOrigin", v)
+    def horizontalOrigin(v: Property[_]) = jsOpt("horizontalOrigin", v)
 
-    def verticalOrigin(v: Property) = jsOpt("verticalOrigin", v)
+    def verticalOrigin(v: Property[_]) = jsOpt("verticalOrigin", v)
 
-    def eyeOffset(v: Property) = jsOpt("eyeOffset", v)
+    def eyeOffset(v: Property[_]) = jsOpt("eyeOffset", v)
 
-    def pixelOffset(v: Property) = jsOpt("pixelOffset", v)
+    def pixelOffset(v: Property[_]) = jsOpt("pixelOffset", v)
 
-    def showBackground(v: Property) = jsOpt("showBackground", v)
-    def backgroundColor(v: Property) = jsOpt("backgroundColor", v)
-    def backgroundPadding(v: Property) = jsOpt("backgroundPadding", v)
+    def showBackground(v: Property[_]) = jsOpt("showBackground", v)
+    def backgroundColor(v: Property[_]) = jsOpt("backgroundColor", v)
+    def backgroundPadding(v: Property[_]) = jsOpt("backgroundPadding", v)
 
   }
 

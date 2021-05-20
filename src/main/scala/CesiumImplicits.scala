@@ -13,7 +13,7 @@ object CesiumImplicits {
 
   implicit def Cartesian3ToConstPosProp(value: Cartesian3): ConstantPositionProperty = new ConstantPositionProperty(value)
 
-  implicit def ValueToConstProp(value: Any): ConstantProperty = new ConstantProperty(value.asInstanceOf[js.Any])
+  implicit def ValueToConstProp[VALUE](value: VALUE): ConstantProperty[VALUE] = new ConstantProperty(value)
 
   implicit def IntToClockRange(value: Int): ClockRange = ClockRange(value)
 

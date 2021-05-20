@@ -565,6 +565,7 @@ class HeadingPitchRoll(var heading: Double = 0, var pitch: Double = 0, var roll:
 
     var id : Object = js.native
     var show : Boolean = js.native
+    var outlinePrimitives: Array[Ray] = js.native
 
     def destroy() : Unit = js.native
     def isDestroy() : Boolean = js.native
@@ -3502,7 +3503,7 @@ class HeadingPitchRoll(var heading: Double = 0, var pitch: Double = 0, var roll:
     var fillMaterialProperty: MaterialProperty = js.native
     var outlineEnabled: Boolean = js.native
     var hasConstantOutline: Boolean = js.native
-    var outlineColorProperty: Property = js.native
+    var outlineColorProperty: Property[_] = js.native
     var outlineWidth: Double = js.native
     var isDynamic: Boolean = js.native
     var isClosed: Boolean = js.native
@@ -5546,24 +5547,24 @@ class HeadingPitchRoll(var heading: Double = 0, var pitch: Double = 0, var roll:
     def this(options: BillboardGraphicsOptions) = this()
 
     var definitionChanged: Event = js.native
-    var image: Property = js.native
-    var imageSubRegion: Property = js.native
-    var scale: Property = js.native
-    var rotation: Property = js.native
-    var alignedAxis: Property = js.native
-    var horizontalOrigin: Property = js.native
-    var verticalOrigin: Property = js.native
-    var color: Property = js.native
-    var eyeOffset: Property = js.native
-    var pixelOffset: Property = js.native
-    var show: Property = js.native
-    var width: Property = js.native
-    var height: Property = js.native
-    var scaleByDistance: Property = js.native
-    var translucencyByDistance: Property = js.native
-    var pixelOffsetScaleByDistance: Property = js.native
-    var sizeInMeters: Property = js.native
-    var distanceDisplayCondition: Property = js.native
+    var image: Property[_] = js.native
+    var imageSubRegion: Property[_] = js.native
+    var scale: Property[_] = js.native
+    var rotation: Property[_] = js.native
+    var alignedAxis: Property[_] = js.native
+    var horizontalOrigin: Property[_] = js.native
+    var verticalOrigin: Property[_] = js.native
+    var color: Property[_] = js.native
+    var eyeOffset: Property[_] = js.native
+    var pixelOffset: Property[_] = js.native
+    var show: Property[_] = js.native
+    var width: Property[_] = js.native
+    var height: Property[_] = js.native
+    var scaleByDistance: Property[_] = js.native
+    var translucencyByDistance: Property[_] = js.native
+    var pixelOffsetScaleByDistance: Property[_] = js.native
+    var sizeInMeters: Property[_] = js.native
+    var distanceDisplayCondition: Property[_] = js.native
 
     var disableDepthTestDistance: Double = js.native
 
@@ -5606,7 +5607,7 @@ class HeadingPitchRoll(var heading: Double = 0, var pitch: Double = 0, var roll:
     var fillMaterialProperty: MaterialProperty = js.native
     var outlineEnabled: Boolean = js.native
     var hasConstantOutline: Boolean = js.native
-    var outlineColorProperty: Property = js.native
+    var outlineColorProperty: Property[_] = js.native
     var outlineWidth: Double = js.native
     var isDynamic: Boolean = js.native
     var isClosed: Boolean = js.native
@@ -5657,14 +5658,14 @@ class HeadingPitchRoll(var heading: Double = 0, var pitch: Double = 0, var roll:
     def this(options: BoxGraphicsOptions) = this()
 
     var definitionChanged: Event = js.native
-    var show: Property = js.native
-    var dimensions: Property = js.native
+    var show: Property[_] = js.native
+    var dimensions: Property[_] = js.native
     var material: MaterialProperty = js.native
-    var fill: Property = js.native
-    var outline: Property = js.native
-    var outlineColor: Property = js.native
-    var outlineWidth: Property = js.native
-    var distanceDisplayCondition: Property = js.native
+    var fill: Property[_] = js.native
+    var outline: Property[_] = js.native
+    var outlineColor: Property[_] = js.native
+    var outlineWidth: Property[_] = js.native
+    var distanceDisplayCondition: Property[_] = js.native
 
     def clone(result: BoxGraphics = ???): BoxGraphics = js.native
 
@@ -5688,7 +5689,7 @@ class HeadingPitchRoll(var heading: Double = 0, var pitch: Double = 0, var roll:
     */
   @js.native
   @JSGlobal("Cesium.CallbackProperty")
-  class CallbackProperty protected() extends Property {
+  class CallbackProperty[VALUE] protected() extends Property[VALUE] {
     def this(callback: CallbackProperty.Callback, isConstant: Boolean) = this()
 
     def setCallback(callback: CallbackProperty.Callback, isConstant: Boolean): js.Dynamic = js.native
@@ -5711,15 +5712,15 @@ class HeadingPitchRoll(var heading: Double = 0, var pitch: Double = 0, var roll:
 
     var isConstant: Boolean = js.native
     var definitionChanged: Event = js.native
-    var evenColor: Property = js.native
-    var oddColor: Property = js.native
-    var repeat: Property = js.native
+    var evenColor: Property[_] = js.native
+    var oddColor: Property[_] = js.native
+    var repeat: Property[_] = js.native
 
     def getType(time: JulianDate): String = js.native
 
     def getValue(time: JulianDate, result: js.Any = ???): js.Dynamic = js.native
 
-    def equals(other: Property = ???): Boolean = js.native
+    def equals(other: Property[_] = ???): Boolean = js.native
   }
 
   /**
@@ -5733,9 +5734,9 @@ class HeadingPitchRoll(var heading: Double = 0, var pitch: Double = 0, var roll:
   @js.native
   @JSGlobal("Cesium.ColorMaterialProperty")
   class ColorMaterialProperty protected() extends MaterialProperty {
-    def this(color: Property = ???) = this()
+    def this(color: Property[_] = ???) = this()
 
-    var color: Property = js.native
+    var color: Property[_] = js.native
   }
 
   /**
@@ -5854,7 +5855,7 @@ class HeadingPitchRoll(var heading: Double = 0, var pitch: Double = 0, var roll:
     */
   @js.native
   @JSGlobal("Cesium.CompositeProperty")
-  class CompositeProperty extends Property {
+  class CompositeProperty[VALUE] extends Property[VALUE] {
     var intervals: TimeIntervalCollection = js.native
   }
 
@@ -5891,10 +5892,10 @@ class HeadingPitchRoll(var heading: Double = 0, var pitch: Double = 0, var roll:
     */
   @js.native
   @JSGlobal("Cesium.ConstantProperty")
-  class ConstantProperty protected() extends Property {
-    def this(value: js.Any = ???) = this()
+  class ConstantProperty[VALUE] protected() extends Property[VALUE] {
+    def this(value: VALUE = ???) = this()
 
-    def setValue(value: js.Any): js.Dynamic = js.native
+    def setValue(value: VALUE): js.Dynamic = js.native
   }
 
   /**
@@ -5917,7 +5918,7 @@ class HeadingPitchRoll(var heading: Double = 0, var pitch: Double = 0, var roll:
     var fillMaterialProperty: MaterialProperty = js.native
     var outlineEnabled: Boolean = js.native
     var hasConstantOutline: Boolean = js.native
-    var outlineColorProperty: Property = js.native
+    var outlineColorProperty: Property[_] = js.native
     var outlineWidth: Double = js.native
     var isDynamic: Boolean = js.native
     var isClosed: Boolean = js.native
@@ -5976,19 +5977,19 @@ class HeadingPitchRoll(var heading: Double = 0, var pitch: Double = 0, var roll:
     def this(options: CorridorGraphicsOptions) = this()
 
     var definitionChanged: Event = js.native
-    var show: Property = js.native
+    var show: Property[_] = js.native
     var material: MaterialProperty = js.native
-    var positions: Property = js.native
-    var height: Property = js.native
-    var extrudedHeight: Property = js.native
-    var granularity: Property = js.native
-    var width: Property = js.native
-    var fill: Property = js.native
-    var outline: Property = js.native
-    var outlineColor: Property = js.native
-    var outlineWidth: Property = js.native
-    var cornerType: Property = js.native
-    var distanceDisplayCondition: Property = js.native
+    var positions: Property[_] = js.native
+    var height: Property[_] = js.native
+    var extrudedHeight: Property[_] = js.native
+    var granularity: Property[_] = js.native
+    var width: Property[_] = js.native
+    var fill: Property[_] = js.native
+    var outline: Property[_] = js.native
+    var outlineColor: Property[_] = js.native
+    var outlineWidth: Property[_] = js.native
+    var cornerType: Property[_] = js.native
+    var distanceDisplayCondition: Property[_] = js.native
 
     def clone(result: CorridorGraphics = ???): CorridorGraphics = js.native
 
@@ -6041,7 +6042,7 @@ class HeadingPitchRoll(var heading: Double = 0, var pitch: Double = 0, var roll:
     var fillMaterialProperty: MaterialProperty = js.native
     var outlineEnabled: Boolean = js.native
     var hasConstantOutline: Boolean = js.native
-    var outlineColorProperty: Property = js.native
+    var outlineColorProperty: Property[_] = js.native
     var outlineWidth: Double = js.native
     var isDynamic: Boolean = js.native
     var isClosed: Boolean = js.native
@@ -6096,18 +6097,18 @@ class HeadingPitchRoll(var heading: Double = 0, var pitch: Double = 0, var roll:
     def this(options: CylinderGraphicsOptions) = this()
 
     var definitionChanged: Event = js.native
-    var length: Property = js.native
-    var topRadius: Property = js.native
-    var bottomRadius: Property = js.native
-    var numberOfVerticalLines: Property = js.native
-    var slices: Property = js.native
-    var show: Property = js.native
+    var length: Property[_] = js.native
+    var topRadius: Property[_] = js.native
+    var bottomRadius: Property[_] = js.native
+    var numberOfVerticalLines: Property[_] = js.native
+    var slices: Property[_] = js.native
+    var show: Property[_] = js.native
     var material: MaterialProperty = js.native
-    var fill: Property = js.native
-    var outline: Property = js.native
-    var outlineColor: Property = js.native
-    var outlineWidth: Property = js.native
-    var distanceDisplayCondition: Property = js.native
+    var fill: Property[_] = js.native
+    var outline: Property[_] = js.native
+    var outlineColor: Property[_] = js.native
+    var outlineWidth: Property[_] = js.native
+    var distanceDisplayCondition: Property[_] = js.native
 
     def clone(result: CylinderGraphics = ???): CylinderGraphics = js.native
 
@@ -6311,21 +6312,21 @@ class HeadingPitchRoll(var heading: Double = 0, var pitch: Double = 0, var roll:
     def this(options: EllipseGraphicsOptions) = this()
 
     var definitionChanged: Event = js.native
-    var semiMajorAxis: Property = js.native
-    var semiMinorAxis: Property = js.native
-    var rotation: Property = js.native
-    var show: Property = js.native
+    var semiMajorAxis: Property[_] = js.native
+    var semiMinorAxis: Property[_] = js.native
+    var rotation: Property[_] = js.native
+    var show: Property[_] = js.native
     var material: MaterialProperty = js.native
-    var height: Property = js.native
-    var extrudedHeight: Property = js.native
-    var granularity: Property = js.native
-    var stRotation: Property = js.native
-    var fill: Property = js.native
-    var outline: Property = js.native
-    var outlineColor: Property = js.native
-    var outlineWidth: Property = js.native
-    var numberOfVerticalLines: Property = js.native
-    var distanceDisplayCondition: Property = js.native
+    var height: Property[_] = js.native
+    var extrudedHeight: Property[_] = js.native
+    var granularity: Property[_] = js.native
+    var stRotation: Property[_] = js.native
+    var fill: Property[_] = js.native
+    var outline: Property[_] = js.native
+    var outlineColor: Property[_] = js.native
+    var outlineWidth: Property[_] = js.native
+    var numberOfVerticalLines: Property[_] = js.native
+    var distanceDisplayCondition: Property[_] = js.native
 
     def clone(result: EllipseGraphics = ???): EllipseGraphics = js.native
 
@@ -6377,17 +6378,17 @@ class HeadingPitchRoll(var heading: Double = 0, var pitch: Double = 0, var roll:
     def this(options: EllipsoidGraphicsOptions) = this()
 
     var definitionChanged: Event = js.native
-    var show: Property = js.native
-    var radii: Property = js.native
+    var show: Property[_] = js.native
+    var radii: Property[_] = js.native
     var material: MaterialProperty = js.native
-    var fill: Property = js.native
-    var outline: Property = js.native
-    var outlineColor: Property = js.native
-    var outlineWidth: Property = js.native
-    var stackPartitions: Property = js.native
-    var slicePartitions: Property = js.native
-    var subdivisions: Property = js.native
-    var distanceDisplayCondition: Property = js.native
+    var fill: Property[_] = js.native
+    var outline: Property[_] = js.native
+    var outlineColor: Property[_] = js.native
+    var outlineWidth: Property[_] = js.native
+    var stackPartitions: Property[_] = js.native
+    var slicePartitions: Property[_] = js.native
+    var subdivisions: Property[_] = js.native
+    var distanceDisplayCondition: Property[_] = js.native
 
     def clone(result: EllipsoidGraphics = ???): EllipsoidGraphics = js.native
 
@@ -6447,12 +6448,12 @@ class HeadingPitchRoll(var heading: Double = 0, var pitch: Double = 0, var roll:
     var box: BoxGraphics = js.native
     var corridor: CorridorGraphics = js.native
     var cylinder: CylinderGraphics = js.native
-    var description: Property = js.native
+    var description: Property[_] = js.native
     var ellipse: EllipseGraphics = js.native
     var ellipsoid: EllipsoidGraphics = js.native
     var label: LabelGraphics = js.native
     var model: ModelGraphics = js.native
-    var orientation: js.UndefOr[Property] = js.native
+    var orientation: js.UndefOr[Property[Quaternion]] = js.native
     var path: PathGraphics = js.native
     var point: PointGraphics = js.native
     var polygon: PolygonGraphics = js.native
@@ -6460,7 +6461,7 @@ class HeadingPitchRoll(var heading: Double = 0, var pitch: Double = 0, var roll:
     var polylineVolume: PolylineVolumeGraphics = js.native
     var position: PositionProperty = js.native
     var rectangle: RectangleGraphics = js.native
-    var viewFrom: Property = js.native
+    var viewFrom: Property[_] = js.native
     var wall: WallGraphics = js.native
 
     def isAvailable(time: JulianDate): Boolean = js.native
@@ -6629,11 +6630,11 @@ class HeadingPitchRoll(var heading: Double = 0, var pitch: Double = 0, var roll:
   class GridMaterialProperty protected() extends MaterialProperty {
     def this(options: GridMaterialPropertyOptions) = this()
 
-    var color: Property = js.native
-    var cellAlpha: Property = js.native
-    var lineCount: Property = js.native
-    var lineThickness: Property = js.native
-    var lineOffset: Property = js.native
+    var color: Property[_] = js.native
+    var cellAlpha: Property[_] = js.native
+    var lineCount: Property[_] = js.native
+    var lineThickness: Property[_] = js.native
+    var lineOffset: Property[_] = js.native
   }
 
   /**
@@ -6652,10 +6653,10 @@ class HeadingPitchRoll(var heading: Double = 0, var pitch: Double = 0, var roll:
   class ImageMaterialProperty protected() extends MaterialProperty {
     def this(options: ImageMaterialPropertyOptions) = this()
 
-    var image: Property = js.native
-    var repeat: Property = js.native
-    var color: Property = js.native
-    var transparent: Property = js.native
+    var image: Property[_] = js.native
+    var repeat: Property[_] = js.native
+    var color: Property[_] = js.native
+    var transparent: Property[_] = js.native
   }
 
   /**
@@ -6764,26 +6765,26 @@ class HeadingPitchRoll(var heading: Double = 0, var pitch: Double = 0, var roll:
     def this(options: LabelGraphicsOptions) = this()
 
     var definitionChanged: Event = js.native
-    var text: Property = js.native
-    var font: Property = js.native
-    var style: Property = js.native
-    var fillColor: Property = js.native
-    var outlineColor: Property = js.native
-    var outlineWidth: Property = js.native
-    var horizontalOrigin: Property = js.native
-    var verticalOrigin: Property = js.native
-    var eyeOffset: Property = js.native
-    var pixelOffset: Property = js.native
-    var scale: Property = js.native
-    var show: Property = js.native
-    var translucencyByDistance: Property = js.native
-    var pixelOffsetScaleByDistance: Property = js.native
-    var distanceDisplayCondition: Property = js.native
+    var text: Property[_] = js.native
+    var font: Property[_] = js.native
+    var style: Property[_] = js.native
+    var fillColor: Property[_] = js.native
+    var outlineColor: Property[_] = js.native
+    var outlineWidth: Property[_] = js.native
+    var horizontalOrigin: Property[_] = js.native
+    var verticalOrigin: Property[_] = js.native
+    var eyeOffset: Property[_] = js.native
+    var pixelOffset: Property[_] = js.native
+    var scale: Property[_] = js.native
+    var show: Property[_] = js.native
+    var translucencyByDistance: Property[_] = js.native
+    var pixelOffsetScaleByDistance: Property[_] = js.native
+    var distanceDisplayCondition: Property[_] = js.native
     var disableDepthTestDistance: Double = js.native
 
-    var showBackground: Property = js.native
-    var backgroundColor: Property = js.native
-    var backgroundPadding: Property = js.native
+    var showBackground: Property[_] = js.native
+    var backgroundColor: Property[_] = js.native
+    var backgroundPadding: Property[_] = js.native
 
     def clone(result: LabelGraphics = ???): LabelGraphics = js.native
 
@@ -6828,7 +6829,7 @@ class HeadingPitchRoll(var heading: Double = 0, var pitch: Double = 0, var roll:
 
     def getValue(time: JulianDate, result: js.Any = ???): js.Dynamic = js.native
 
-    def equals(other: Property = ???): Boolean = js.native
+    def equals(other: Property[_] = ???): Boolean = js.native
   }
 
   /**
@@ -6861,16 +6862,16 @@ class HeadingPitchRoll(var heading: Double = 0, var pitch: Double = 0, var roll:
     def this(options: ModelGraphicsOptions) = this()
 
     var definitionChanged: Event = js.native
-    var show: Property = js.native
-    var scale: Property = js.native
-    var minimumPixelSize: Property = js.native
-    var maximumScale: Property = js.native
-    var incrementallyLoadTextures: Property = js.native
-    var uri: Property = js.native
-    var runAnimations: Property = js.native
+    var show: Property[_] = js.native
+    var scale: Property[_] = js.native
+    var minimumPixelSize: Property[Int] = js.native
+    var maximumScale: Property[_] = js.native
+    var incrementallyLoadTextures: Property[_] = js.native
+    var uri: Property[_] = js.native
+    var runAnimations: Property[_] = js.native
     var nodeTransformations: PropertyBag = js.native
     var shadows: Int = js.native
-    var distanceDisplayCondition: Property = js.native
+    var distanceDisplayCondition: Property[_] = js.native
 
     var color: Color = js.native
     var colorBlendMode: ColorBlendMode = js.native
@@ -6915,13 +6916,13 @@ class HeadingPitchRoll(var heading: Double = 0, var pitch: Double = 0, var roll:
 
     var isConstant: Boolean = js.native
     var definitionChanged: Event = js.native
-    var translation: Property = js.native
-    var rotation: Property = js.native
-    var scale: Property = js.native
+    var translation: Property[_] = js.native
+    var rotation: Property[_] = js.native
+    var scale: Property[_] = js.native
 
     def getValue(time: JulianDate, result: TranslationRotationScale = ???): TranslationRotationScale = js.native
 
-    def equals(other: Property = ???): Boolean = js.native
+    def equals(other: Property[_] = ???): Boolean = js.native
   }
 
   /**
@@ -6944,13 +6945,13 @@ class HeadingPitchRoll(var heading: Double = 0, var pitch: Double = 0, var roll:
     def this(options: PathGraphicsOptions) = this()
 
     var definitionChanged: Event = js.native
-    var show: Property = js.native
+    var show: Property[_] = js.native
     var material: MaterialProperty = js.native
-    var width: Property = js.native
-    var resolution: Property = js.native
-    var leadTime: Property = js.native
-    var trailTime: Property = js.native
-    var distanceDisplayCondition: Property = js.native
+    var width: Property[_] = js.native
+    var resolution: Property[_] = js.native
+    var leadTime: Property[_] = js.native
+    var trailTime: Property[_] = js.native
+    var distanceDisplayCondition: Property[_] = js.native
 
     def clone(result: PathGraphics = ???): PathGraphics = js.native
 
@@ -6992,16 +6993,16 @@ class HeadingPitchRoll(var heading: Double = 0, var pitch: Double = 0, var roll:
     def this(options: PointGraphicsOptions) = this()
 
     var definitionChanged: Event = js.native
-    var color: Property = js.native
-    var pixelSize: Property = js.native
-    var outlineColor: Property = js.native
-    var outlineWidth: Property = js.native
-    var show: Property = js.native
-    var scaleByDistance: Property = js.native
-    var translucencyByDistance: Property = js.native
+    var color: Property[_] = js.native
+    var pixelSize: Property[_] = js.native
+    var outlineColor: Property[_] = js.native
+    var outlineWidth: Property[_] = js.native
+    var show: Property[_] = js.native
+    var scaleByDistance: Property[_] = js.native
+    var translucencyByDistance: Property[_] = js.native
 
     var heightReference: HeightReference = js.native
-    var distanceDisplayCondition: Property = js.native
+    var distanceDisplayCondition: Property[_] = js.native
     var disableDepthTestDistance: Double = js.native
 
     def clone(result: PointGraphics = ???): PointGraphics = js.native
@@ -7075,21 +7076,21 @@ class HeadingPitchRoll(var heading: Double = 0, var pitch: Double = 0, var roll:
     def this(options: PolygonGraphicsOptions) = this()
 
     var definitionChanged: Event = js.native
-    var show: Property = js.native
+    var show: Property[_] = js.native
     var material: MaterialProperty = js.native
-    var hierarchy: Property = js.native
-    var height: Property = js.native
-    var extrudedHeight: Property = js.native
-    var granularity: Property = js.native
-    var stRotation: Property = js.native
-    var fill: Property = js.native
-    var outline: Property = js.native
-    var outlineColor: Property = js.native
-    var outlineWidth: Property = js.native
-    var perPositionHeight: Property = js.native
-    var closeTop: Property = js.native
-    var closeBottom: Property = js.native
-    var distanceDisplayCondition: Property = js.native
+    var hierarchy: Property[_] = js.native
+    var height: Property[_] = js.native
+    var extrudedHeight: Property[_] = js.native
+    var granularity: Property[_] = js.native
+    var stRotation: Property[_] = js.native
+    var fill: Property[_] = js.native
+    var outline: Property[_] = js.native
+    var outlineColor: Property[_] = js.native
+    var outlineWidth: Property[_] = js.native
+    var perPositionHeight: Property[_] = js.native
+    var closeTop: Property[_] = js.native
+    var closeBottom: Property[_] = js.native
+    var distanceDisplayCondition: Property[_] = js.native
 
     def clone(result: PolygonGraphics = ???): PolygonGraphics = js.native
 
@@ -7107,17 +7108,17 @@ class HeadingPitchRoll(var heading: Double = 0, var pitch: Double = 0, var roll:
   @js.native
   @JSGlobal("Cesium.PolylineArrowMaterialProperty")
   class PolylineArrowMaterialProperty protected() extends js.Object {
-    def this(color: Property = ???) = this()
+    def this(color: Property[_] = ???) = this()
 
     var isConstant: Boolean = js.native
     var definitionChanged: Event = js.native
-    var color: Property = js.native
+    var color: Property[_] = js.native
 
     def getType(time: JulianDate): String = js.native
 
     def getValue(time: JulianDate, result: js.Any = ???): js.Dynamic = js.native
 
-    def equals(other: Property = ???): Boolean = js.native
+    def equals(other: Property[_] = ???): Boolean = js.native
   }
 
   /**
@@ -7153,8 +7154,8 @@ class HeadingPitchRoll(var heading: Double = 0, var pitch: Double = 0, var roll:
   class PolylineGlowMaterialProperty protected() extends MaterialProperty {
     def this(options: PolylineGlowMaterialPropertyOptions) = this()
 
-    var color: Property = js.native
-    var glowPower: Property = js.native
+    var color: Property[_] = js.native
+    var glowPower: Property[_] = js.native
   }
 
   /**
@@ -7182,13 +7183,13 @@ class HeadingPitchRoll(var heading: Double = 0, var pitch: Double = 0, var roll:
     def this(options: PolylineGraphicsOptions) = this()
 
     var definitionChanged: Event = js.native
-    var show: Property = js.native
+    var show: Property[_] = js.native
     var material: MaterialProperty = js.native
-    var positions: Property = js.native
-    var width: Property = js.native
-    var followSurface: Property = js.native
-    var granularity: Property = js.native
-    var distanceDisplayCondition: Property = js.native
+    var positions: Property[_] = js.native
+    var width: Property[_] = js.native
+    var followSurface: Property[_] = js.native
+    var granularity: Property[_] = js.native
+    var distanceDisplayCondition: Property[_] = js.native
 
     def clone(result: PolylineGraphics = ???): PolylineGraphics = js.native
 
@@ -7210,9 +7211,9 @@ class HeadingPitchRoll(var heading: Double = 0, var pitch: Double = 0, var roll:
   class PolylineOutlineMaterialProperty protected() extends MaterialProperty {
     def this(options: PolylineOutlineMaterialPropertyOptions) = this()
 
-    var color: Property = js.native
-    var outlineColor: Property = js.native
-    var outlineWidth: Property = js.native
+    var color: Property[_] = js.native
+    var outlineColor: Property[_] = js.native
+    var outlineWidth: Property[_] = js.native
   }
 
   /**
@@ -7235,7 +7236,7 @@ class HeadingPitchRoll(var heading: Double = 0, var pitch: Double = 0, var roll:
     var fillMaterialProperty: MaterialProperty = js.native
     var outlineEnabled: Boolean = js.native
     var hasConstantOutline: Boolean = js.native
-    var outlineColorProperty: Property = js.native
+    var outlineColorProperty: Property[_] = js.native
     var outlineWidth: Double = js.native
     var isDynamic: Boolean = js.native
     var isClosed: Boolean = js.native
@@ -7291,17 +7292,17 @@ class HeadingPitchRoll(var heading: Double = 0, var pitch: Double = 0, var roll:
     def this(options: PolylineVolumeGraphicsOptions) = this()
 
     var definitionChanged: Event = js.native
-    var show: Property = js.native
+    var show: Property[_] = js.native
     var material: MaterialProperty = js.native
-    var positions: Property = js.native
-    var shape: Property = js.native
-    var granularity: Property = js.native
-    var fill: Property = js.native
-    var outline: Property = js.native
-    var outlineColor: Property = js.native
-    var outlineWidth: Property = js.native
-    var cornerType: Property = js.native
-    var distanceDisplayCondition: Property = js.native
+    var positions: Property[_] = js.native
+    var shape: Property[_] = js.native
+    var granularity: Property[_] = js.native
+    var fill: Property[_] = js.native
+    var outline: Property[_] = js.native
+    var outlineColor: Property[_] = js.native
+    var outlineWidth: Property[_] = js.native
+    var cornerType: Property[_] = js.native
+    var distanceDisplayCondition: Property[_] = js.native
 
     def clone(result: PolylineVolumeGraphics = ???): PolylineVolumeGraphics = js.native
 
@@ -7330,7 +7331,7 @@ class HeadingPitchRoll(var heading: Double = 0, var pitch: Double = 0, var roll:
 
     def getValueInReferenceFrame(time: JulianDate, referenceFrame: ReferenceFrame, result: Cartesian3 = ???): Cartesian3 = js.native
 
-    def equals(other: Property = ???): Boolean = js.native
+    def equals(other: Property[_] = ???): Boolean = js.native
   }
 
   /**
@@ -7345,8 +7346,8 @@ class HeadingPitchRoll(var heading: Double = 0, var pitch: Double = 0, var roll:
     */
   @js.native
   @JSGlobal("Cesium.PositionPropertyArray")
-  class PositionPropertyArray protected() extends js.Object {
-    def this(value: js.Array[Property] = ???, referenceFrame: ReferenceFrame = ???) = this()
+  class PositionPropertyArray[VALUE] protected() extends js.Object {
+    def this(value: js.Array[Property[VALUE]] = ???, referenceFrame: ReferenceFrame = ???) = this()
 
     var isConstant: Boolean = js.native
     var definitionChanged: Event = js.native
@@ -7356,9 +7357,9 @@ class HeadingPitchRoll(var heading: Double = 0, var pitch: Double = 0, var roll:
 
     def getValueInReferenceFrame(time: JulianDate, referenceFrame: ReferenceFrame, result: Cartesian3 = ???): Cartesian3 = js.native
 
-    def setValue(value: js.Array[Property]): js.Dynamic = js.native
+    def setValue(value: js.Array[Property[VALUE]]): js.Dynamic = js.native
 
-    def equals(other: Property = ???): Boolean = js.native
+    def equals(other: Property[_] = ???): Boolean = js.native
   }
 
   /**
@@ -7376,13 +7377,13 @@ class HeadingPitchRoll(var heading: Double = 0, var pitch: Double = 0, var roll:
     * @see ReferenceProperty
     */
   @js.native
-  trait Property extends js.Object {
+  trait Property[VALUE] extends js.Object {
     var isConstant: Boolean = js.native
     var definitionChanged: Event = js.native
 
-    def getValue(time: JulianDate, result: js.Any = ???): js.Dynamic = js.native
+    def getValue(time: JulianDate, result: js.Any = ???): VALUE with js.Dynamic = js.native
 
-    def equals(other: Property = ???): Boolean = js.native
+    def equals(other: Property[_] = ???): Boolean = js.native
   }
 
   /**
@@ -7396,17 +7397,17 @@ class HeadingPitchRoll(var heading: Double = 0, var pitch: Double = 0, var roll:
     */
   @js.native
   @JSGlobal("Cesium.PropertyArray")
-  class PropertyArray protected() extends js.Object {
-    def this(value: js.Array[Property] = ???) = this()
+  class PropertyArray[VALUE] protected() extends js.Object {
+    def this(value: js.Array[Property[VALUE]] = ???) = this()
 
     var isConstant: Boolean = js.native
     var definitionChanged: Event = js.native
 
     def getValue(time: JulianDate, result: js.Array[js.Any] = ???): js.Array[js.Any] = js.native
 
-    def setValue(value: js.Array[Property]): js.Dynamic = js.native
+    def setValue(value: js.Array[Property[VALUE]]): js.Dynamic = js.native
 
-    def equals(other: Property = ???): Boolean = js.native
+    def equals(other: Property[_] = ???): Boolean = js.native
   }
 
   /**
@@ -7437,7 +7438,7 @@ class HeadingPitchRoll(var heading: Double = 0, var pitch: Double = 0, var roll:
 
     def merge(source: js.Any, createPropertyCallback: js.Function = ???): js.Dynamic = js.native
 
-    def equals(other: Property = ???): Boolean = js.native
+    def equals(other: Property[_] = ???): Boolean = js.native
   }
 
   /**
@@ -7492,21 +7493,21 @@ class HeadingPitchRoll(var heading: Double = 0, var pitch: Double = 0, var roll:
     def this(options: RectangleGraphicsOptions) = this()
 
     var definitionChanged: Event = js.native
-    var show: Property = js.native
-    var coordinates: Property = js.native
+    var show: Property[_] = js.native
+    var coordinates: Property[_] = js.native
     var material: MaterialProperty = js.native
-    var height: Property = js.native
-    var extrudedHeight: Property = js.native
-    var granularity: Property = js.native
-    var stRotation: Property = js.native
-    var rotation: Property = js.native
-    var fill: Property = js.native
-    var outline: Property = js.native
-    var outlineColor: Property = js.native
-    var outlineWidth: Property = js.native
-    var closeTop: Property = js.native
-    var closeBottom: Property = js.native
-    var distanceDisplayCondition: Property = js.native
+    var height: Property[_] = js.native
+    var extrudedHeight: Property[_] = js.native
+    var granularity: Property[_] = js.native
+    var stRotation: Property[_] = js.native
+    var rotation: Property[_] = js.native
+    var fill: Property[_] = js.native
+    var outline: Property[_] = js.native
+    var outlineColor: Property[_] = js.native
+    var outlineWidth: Property[_] = js.native
+    var closeTop: Property[_] = js.native
+    var closeBottom: Property[_] = js.native
+    var distanceDisplayCondition: Property[_] = js.native
 
     def clone(result: RectangleGraphics = ???): RectangleGraphics = js.native
 
@@ -7557,14 +7558,14 @@ class HeadingPitchRoll(var heading: Double = 0, var pitch: Double = 0, var roll:
     */
   @js.native
   @JSGlobal("Cesium.ReferenceProperty")
-  class ReferenceProperty protected() extends Property {
+  class ReferenceProperty[VALUE] protected() extends Property[VALUE] {
     def this(targetCollection: EntityCollection, targetId: String, targetPropertyNames: js.Array[String]) = this()
 
     var referenceFrame: ReferenceFrame = js.native
     var targetId: String = js.native
     var targetCollection: EntityCollection = js.native
     var targetPropertyNames: js.Array[String] = js.native
-    var resolvedProperty: Property = js.native
+    var resolvedProperty: Property[_] = js.native
 
     def getValueInReferenceFrame(time: JulianDate, referenceFrame: ReferenceFrame, result: Cartesian3 = ???): Cartesian3 = js.native
 
@@ -7574,7 +7575,7 @@ class HeadingPitchRoll(var heading: Double = 0, var pitch: Double = 0, var roll:
   @js.native
   @JSGlobal("Cesium.ReferenceProperty")
   object ReferenceProperty extends js.Object {
-    def fromString(targetCollection: EntityCollection, referenceString: String): ReferenceProperty = js.native
+    def fromString(targetCollection: EntityCollection, referenceString: String): ReferenceProperty[_] = js.native
   }
 
   /**
@@ -7654,7 +7655,7 @@ class HeadingPitchRoll(var heading: Double = 0, var pitch: Double = 0, var roll:
     */
   @js.native
   @JSGlobal("Cesium.SampledProperty")
-  class SampledProperty protected() extends Property {
+  class SampledProperty[VALUE] protected() extends Property[VALUE] {
     def this(`type`: js.Dynamic | Packable, derivativeTypes: js.Array[js.Dynamic] | js.Array[Packable] = ???) = this()
 
     var derivativeTypes: js.Array[js.Dynamic] | js.Array[Packable] = js.native
@@ -7691,11 +7692,11 @@ class HeadingPitchRoll(var heading: Double = 0, var pitch: Double = 0, var roll:
   class StripeMaterialProperty protected() extends MaterialProperty {
     def this(options: StripeMaterialPropertyOptions) = this()
 
-    var orientation: Property = js.native
-    var evenColor: Property = js.native
-    var oddColor: Property = js.native
-    var offset: Property = js.native
-    var repeat: Property = js.native
+    var orientation: Property[_] = js.native
+    var evenColor: Property[_] = js.native
+    var oddColor: Property[_] = js.native
+    var offset: Property[_] = js.native
+    var repeat: Property[_] = js.native
   }
 
   /**
@@ -7751,7 +7752,7 @@ class HeadingPitchRoll(var heading: Double = 0, var pitch: Double = 0, var roll:
     */
   @js.native
   @JSGlobal("Cesium.TimeIntervalCollectionProperty")
-  class TimeIntervalCollectionProperty() extends Property {
+  class TimeIntervalCollectionProperty[VALUE]() extends Property[VALUE] {
     var intervals: TimeIntervalCollection = js.native
   }
 
@@ -7777,16 +7778,16 @@ class HeadingPitchRoll(var heading: Double = 0, var pitch: Double = 0, var roll:
   @js.native
   @JSGlobal("Cesium.VelocityOrientationProperty")
   class VelocityOrientationProperty protected() extends js.Object {
-    def this(position: Property = ???, ellipsoid: Ellipsoid = ???) = this()
+    def this(position: Property[_] = ???, ellipsoid: Ellipsoid = ???) = this()
 
     var isConstant: Boolean = js.native
     var definitionChanged: Event = js.native
-    var position: Property = js.native
-    var ellipsoid: Property = js.native
+    var position: Property[_] = js.native
+    var ellipsoid: Property[_] = js.native
 
     def getValue(time: JulianDate = ???, result: Quaternion = ???): Quaternion = js.native
 
-    def equals(other: Property = ???): Boolean = js.native
+    def equals(other: Property[_] = ???): Boolean = js.native
   }
 
   /**
@@ -7813,15 +7814,15 @@ class HeadingPitchRoll(var heading: Double = 0, var pitch: Double = 0, var roll:
   @js.native
   @JSGlobal("Cesium.VelocityVectorProperty")
   class VelocityVectorProperty protected() extends js.Object {
-    def this(position: Property = ???) = this()
+    def this(position: Property[_] = ???) = this()
 
     var isConstant: Boolean = js.native
     var definitionChanged: Event = js.native
-    var position: Property = js.native
+    var position: Property[_] = js.native
 
     def getValue(time: JulianDate = ???, result: Cartesian3 = ???): Cartesian3 = js.native
 
-    def equals(other: Property = ???): Boolean = js.native
+    def equals(other: Property[_] = ???): Boolean = js.native
   }
 
   /**
@@ -7895,17 +7896,17 @@ class HeadingPitchRoll(var heading: Double = 0, var pitch: Double = 0, var roll:
     def this(options: WallGraphicsOptions) = this()
 
     var definitionChanged: Event = js.native
-    var show: Property = js.native
+    var show: Property[_] = js.native
     var material: MaterialProperty = js.native
-    var positions: Property = js.native
-    var minimumHeights: Property = js.native
-    var maximumHeights: Property = js.native
-    var granularity: Property = js.native
-    var fill: Property = js.native
-    var outline: Property = js.native
-    var outlineColor: Property = js.native
-    var outlineWidth: Property = js.native
-    var distanceDisplayCondition: Property = js.native
+    var positions: Property[_] = js.native
+    var minimumHeights: Property[_] = js.native
+    var maximumHeights: Property[_] = js.native
+    var granularity: Property[_] = js.native
+    var fill: Property[_] = js.native
+    var outline: Property[_] = js.native
+    var outlineColor: Property[_] = js.native
+    var outlineWidth: Property[_] = js.native
+    var distanceDisplayCondition: Property[_] = js.native
 
     def clone(result: WallGraphics = ???): WallGraphics = js.native
 
@@ -8806,7 +8807,7 @@ class HeadingPitchRoll(var heading: Double = 0, var pitch: Double = 0, var roll:
   //  var receiveShadows: Boolean = js.native
     var terrainProviderChanged: Event = js.native
 
-    def pick(ray: Ray, scene: Scene, result: Cartesian3 = ???): Cartesian3 | Unit = js.native
+    def pick(ray: Ray, scene: Scene, result: Cartesian3 = ???): UndefOr[Cartesian3] = js.native
 
     def getHeight(cartographic: Cartographic): Double | Unit = js.native
 
@@ -12977,8 +12978,9 @@ class HeadingPitchRoll(var heading: Double = 0, var pitch: Double = 0, var roll:
 
   // todo
   @js.native
-  trait IntersectionTests extends js.Object {
-
+  @JSGlobal("Cesium.IntersectionTests")
+  object IntersectionTests extends js.Object {
+    def rayEllipsoid(ray: Ray, ellipsoid: Ellipsoid): Interval = js.native
   }
 
   // todo
