@@ -38,7 +38,7 @@ package cesiumOptions {
     def color(v: Color) = jsOpt("color", v)
     def updateOnChange(v: Boolean) = jsOpt("updateOnChange", v)
     def show(v: Boolean) = jsOpt("show", v)
-    def id(v: Object) = jsOpt("id", v)
+    def id(v: String) = jsOpt("id", v)
   }
   
   @js.native
