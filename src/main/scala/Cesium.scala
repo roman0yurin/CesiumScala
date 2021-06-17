@@ -2537,6 +2537,11 @@ class HeadingPitchRoll(var heading: Double = 0, var pitch: Double = 0, var roll:
     var indices: Uint16Array | Uint32Array = js.native
     var primitiveType: PrimitiveType = js.native
     var boundingSphere: BoundingSphere = js.native
+
+    /**
+    * Вернуть массив вершин (меш сети), в CEF координатах (по 3 на вершину)
+    **/
+    def getVertexes():Float64Array = js.native
   }
 
   @js.native
@@ -3834,6 +3839,10 @@ class HeadingPitchRoll(var heading: Double = 0, var pitch: Double = 0, var roll:
   @JSGlobal("Cesium.PolygonGeometry")
   class PolygonGeometry protected() extends js.Object {
     def this(options: PolygonGeometryOptions) = this()
+
+
+    /**Массив вершин, образующих контур полигона, без замыкающей точки**/
+    def ringVertexes():js.Array[Cartesian3] = js.native
 
     var packedLength: Double = js.native
   }
@@ -9646,26 +9655,27 @@ class HeadingPitchRoll(var heading: Double = 0, var pitch: Double = 0, var roll:
   @js.native
   @JSGlobal("Cesium.Material")
   object Material extends js.Object {
-    var DefaultImageId: String = js.native
-    var DefaultCubeMapId: String = js.native
-    var ColorType: String = js.native
-    var ImageType: String = js.native
-    var DiffuseMapType: String = js.native
-    var AlphaMapType: String = js.native
-    var SpecularMapType: String = js.native
-    var EmissionMapType: String = js.native
-    var BumpMapType: String = js.native
-    var NormalMapType: String = js.native
-    var GridType: String = js.native
-    var StripeType: String = js.native
-    var CheckerboardType: String = js.native
-    var DotType: String = js.native
-    var WaterType: String = js.native
-    var RimLightingType: String = js.native
-    var FadeType: String = js.native
-    var PolylineArrowType: String = js.native
-    var PolylineGlowType: String = js.native
-    var PolylineOutlineType: String = js.native
+    val DefaultImageId: String = js.native
+    val DefaultCubeMapId: String = js.native
+    val ColorType: String = js.native
+    val ImageType: String = js.native
+    val DiffuseMapType: String = js.native
+    val AlphaMapType: String = js.native
+    val SpecularMapType: String = js.native
+    val EmissionMapType: String = js.native
+    val BumpMapType: String = js.native
+    val NormalMapType: String = js.native
+    val GridType: String = js.native
+    val StripeType: String = js.native
+    val CheckerboardType: String = js.native
+    val DotType: String = js.native
+    val WaterType: String = js.native
+    val RimLightingType: String = js.native
+    val FadeType: String = js.native
+    val PolylineArrowType: String = js.native
+    val PolylineGlowType: String = js.native
+    val PolylineOutlineType: String = js.native
+    val WrapImage: String = js.native
 
     def fromType(`type`: String, uniforms: js.Any = ???): Material = js.native
   }
