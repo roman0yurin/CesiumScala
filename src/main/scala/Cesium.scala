@@ -7191,6 +7191,7 @@ class HeadingPitchRoll(var heading: Double = 0, var pitch: Double = 0, var roll:
   class PolylineGraphics protected() extends js.Object {
     def this(options: PolylineGraphicsOptions) = this()
 
+    var clampToGround: Boolean = js.native
     var definitionChanged: Event = js.native
     var show: Property[_] = js.native
     var material: MaterialProperty = js.native
