@@ -4990,6 +4990,7 @@ class HeadingPitchRoll(var heading: Double = 0, var pitch: Double = 0, var roll:
     var hasVertexNormals: Boolean = js.native
 
     def requestTileGeometry(x: Double, y: Double, level: Double, throttleRequests: Boolean = ???): Promise[TerrainData] | Unit = js.native
+    def requestTileGeometry1(x: Double, y: Double, level: Double, throttleRequests: Boolean = ???): Promise[js.Array[Byte]] = js.native
 
     def getLevelMaximumGeometricError(level: Double): Double = js.native
 
